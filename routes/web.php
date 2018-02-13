@@ -20,9 +20,10 @@ Auth::routes()
 	
 
 
-	Route::get('/yearbook', function () {
+	Route::get('yearbook', function () {
 		return view('auth.login');
 	});
+	
 
 	Auth::routes();
 Route::get('yearbook/logout', '\App\Http\Controllers\Auth\LoginController@logout'); //Just added to fix issue

@@ -17,7 +17,7 @@
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Raleway:300'>
 
-      <link rel="stylesheet" href="css/style1.css">
+      <link rel="stylesheet" href="../css/style1.css">
 
   
 </head>
@@ -75,10 +75,10 @@ Welcome to<b> Yearbook'17</b> Portal </h3>
 
 <!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 <div class="slideshow">
-  <div class="slideshow-image" style="background-image: url('screen.png')"></div>
-  <div class="slideshow-image" style="background-image: url('12.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('2.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('back.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('../screen.png')"></div>
+  <div class="slideshow-image" style="background-image: url('../12.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('../2.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('../back.jpg')"></div>
 </div>
   
 
