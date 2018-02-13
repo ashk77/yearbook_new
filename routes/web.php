@@ -20,19 +20,19 @@ Auth::routes()
 	
 
 
-	Route::get('yearbook', function () {
+	Route::get('/', function () {
 		return view('auth.login');
 	});
 	
 
 	Auth::routes();
-Route::get('yearbook/logout', '\App\Http\Controllers\Auth\LoginController@logout'); //Just added to fix issue
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout'); //Just added to fix issue
 
-Route::get('/yearbook/home', 'HomeController@index')->name('home');
-Route::get('/yearbook/profile_index', 'profile@index');
-Route::get('/yearbook/profile_index/{roll}', 'profile@testimonials');
-Route::post('/yearbook/search','HomeController@search');
-Route::get('/yearbook/comment/{id}','ImageController@comment');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile_index', 'profile@index');
+Route::get('/profile_index/{roll}', 'profile@testimonials');
+Route::post('/search','HomeController@search');
+Route::get('/comment/{id}','ImageController@comment');
 
 
 
@@ -44,66 +44,66 @@ FileController
 	
 */
 
-	Route::post('/yearbook/upload_pic_moto','FileController@upload_pic_moto');
-	Route::post('/yearbook/writetestimony/{roll}','ViewsController@write');
+	Route::post('/upload_pic_moto','FileController@upload_pic_moto');
+	Route::post('/writetestimony/{roll}','ViewsController@write');
 
-	Route::get('/yearbook/upload_pic_moto','HomeController@index');
+	Route::get('/upload_pic_moto','HomeController@index');
 
 
-	Route::get('/yearbook/upload','ImageController@index');
+	Route::get('/upload','ImageController@index');
 
-	Route::post('/yearbook/upload','ImageController@upload');
+	Route::post('/upload','ImageController@upload');
 
-	Route::get('/yearbook/details',function(){
+	Route::get('/details',function(){
 		$user = App\User::get();
 		$roll = Auth::user()->rollno;
 		$notifications = App\views::where('depmate',$roll)->where('read','1')->get()->toArray();
 
 		return view('details1',compact('user','notifications'));
 	});
-	Route::post('/yearbook/details','HomeController@edit');
+	Route::post('/details','HomeController@edit');
 
 
 
-	Route::get('/yearbook/writeup','WriteupController@index');
+	Route::get('/writeup','WriteupController@index');
 
-	Route::post('/yearbook/writeup','WriteupController@store');
+	Route::post('/writeup','WriteupController@store');
 
-	Route::get('/yearbook/writeup/{id}','WriteupController@delete');
+	Route::get('/writeup/{id}','WriteupController@delete');
 
-	Route::post('/yearbook/updates','WriteupController@updates');
-	Route::post('/yearbook/approve','ViewsController@approve');
+	Route::post('/updates','WriteupController@updates');
+	Route::post('/approve','ViewsController@approve');
 
-	Route::get('/yearbook/approve/{id}','ViewsController@approval');
-	Route::get('/yearbook/disapprove/{id}','ViewsController@disapproval');
+	Route::get('/approve/{id}','ViewsController@approval');
+	Route::get('/disapprove/{id}','ViewsController@disapproval');
 
-	Route::get('/yearbook/read/{id}','ViewsController@read');
+	Route::get('/read/{id}','ViewsController@read');
 
 //route for navbar unseen testinomial from navbar.blade.php 
 //go to profile.php controller
 
-Route::get('/yearbook/updateread', 'profile@updateread');
-Route::post('/yearbook/comment','CommentController@add');
-Route::post('/yearbook/commentadd','CommentController@new');
-Route::post('/yearbook/likes','LikesController@load');
-Route::post('/yearbook/likeadd','LikesController@like');
+Route::get('/updateread', 'profile@updateread');
+Route::post('/comment','CommentController@add');
+Route::post('/commentadd','CommentController@new');
+Route::post('/likes','LikesController@load');
+Route::post('/likeadd','LikesController@like');
 
 
 //change password route referenced by navbar2.blade.php
 //go to env file to change email and passord 
 //go to config/mail from there change the from name and id
-Route::get('/yearbook/send','mailController@send');
+Route::get('/send','mailController@send');
 
 
-Route::get('/yearbook/invite', 'InviteController@invite')->name('invite');
-Route::post('/yearbook/invite', 'InviteController@process')->name('process');
+Route::get('/invite', 'InviteController@invite')->name('invite');
+Route::post('/invite', 'InviteController@process')->name('process');
 // {token} is a required parameter that will be exposed to us in the controller method
-Route::get('/yearbook/accept/{token}', 'InviteController@accept')->name('accept');
+Route::get('/accept/{token}', 'InviteController@accept')->name('accept');
 
 
 
 //referenced by navbar2
 
-Route::get('/yearbook/trending','CountController@index');
+Route::get('/trending','CountController@index');
 
 

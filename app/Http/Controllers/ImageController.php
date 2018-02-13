@@ -49,13 +49,13 @@ class ImageController extends Controller
 
            //using array instead of object
 			$image['filePath'] = $name;
-			$file->move(public_path().'/uploads/', $name);
+			$file->move(public_path(), $name);
 
 			$classifier = request('classifier');
 			$caption = request('caption');
 			Image::create([
 				
-				'url' => '/uploads/'.$name,
+				'url' => 'yearbook/'.$name,
 				'rollno' => $user->rollno,
 				'caption' => $caption,
 				'classifier' => $classifier,

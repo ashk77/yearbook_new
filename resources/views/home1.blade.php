@@ -12,7 +12,7 @@
 
   <!-- Bootstrap core CSS -->
 
-  <link rel="stylesheet" type="text/css" href="../css/animate.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/animate.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -27,11 +27,11 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../css/business-casual.min.css" rel="stylesheet">
+  <link href="http://www.sac.iitkgp.ac.in/yearbook_files/css/business-casual.min.css" rel="stylesheet">
 
 
-  <link rel="stylesheet" type="text/css" href="../css/autocomplete.css">
-  <script src="../js/autocomplete.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/autocomplete.css">
+  <script src="http://www.sac.iitkgp.ac.in/yearbook_files/js/autocomplete.js"></script>
   <style type="text/css">
   
   .dropdown-menu{
@@ -89,7 +89,7 @@
 
   <!-- Navigation--> 
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background-color: rgba(67,100,107,0.55);">
-    <a class="navbar-brand text-light" href="http://www.sac.iitkgp.ac.in"><img height="90" width="250" src="../sac.png" alt="someimg"/></a>
+    <a class="navbar-brand text-light" href="http://www.sac.iitkgp.ac.in"><img height="90" width="250" src="sac.png" alt="someimg"/></a>
     <div class="container">
       <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="http://www.sac.iitkgp.ac.in">Yearbook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,7 +165,7 @@
                       $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
                       @endphp  
                       <div class="col-lg-3 col-sm-3 col-3 text-center">
-                        <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
+                        <img src="{{$pic[0]}}" class="w-50 rounded-circle">
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
@@ -235,7 +235,7 @@
 
               <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" onchange="readURL(this);">
 
-              <img src="<?php if (!empty(Auth::user()->pro_pic)){echo '../'.Auth::user()->pro_pic; } else { echo '../ind/shot.jpg';}?>" alt="" class="intro-img img-fluid mb-3 mb-lg-0 rounded" id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;">
+              <img src="<?php if (!empty(Auth::user()->pro_pic)){echo Auth::user()->pro_pic; } else { echo 'ind/shot.jpg';}?>" alt="" class="intro-img img-fluid mb-3 mb-lg-0 rounded" id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;">
 
               <div class="input-field col sm-12 lg-12 md-12">
 
@@ -275,9 +275,9 @@
       <div class="container">
         <div class="intro">
           @if(!empty(Auth::user()->pro_pic))
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 600px" src="../{{Auth::user()->pro_pic}}" alt="">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 600px" src="{{Auth::user()->pro_pic}}" alt="">
           @else
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 500px; opacity: 0.78;" src="../img/intro.jpg" alt="">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 500px; opacity: 0.78;" src="img/intro.jpg" alt="">
           @endif
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
@@ -320,14 +320,14 @@
               <br>
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper"></span>
-                <span class="section-heading-lower">Prevoius Yearbook</span>
+                <span class="section-heading-lower">Previous Yearbook</span>
               </h2>
               <div class="row">
-                <div class="col-lg-4 col-sm-4"><img src="../ind/year16.jpg" width="100%" alt=""/></div>
+                <div class="col-lg-4 col-sm-4"><img src="ind/year16.jpg" width="100%" alt=""/></div>
 
-                <div class="col-lg-4 col-sm-4"> <img src="../ind/year2015.jpg" width="100%"  alt=""/></div>
+                <div class="col-lg-4 col-sm-4"> <img src="ind/year2015.jpg" width="100%"  alt=""/></div>
 
-                <div class="col-lg-4 col-sm-4"> <img src="../ind/year2014.jpg" width="100%"  alt=""/></div>
+                <div class="col-lg-4 col-sm-4"> <img src="ind/year2014.jpg" width="100%"  alt=""/></div>
               </div>
             </div>
           </div>

@@ -11,13 +11,13 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="yearbook/css/animate.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Raleway:300'>
 
-      <link rel="stylesheet" href="../css/style1.css">
+      <link rel="stylesheet" href="http://localhost/yearbook_files/css/style1.css">
 
   
 </head>
@@ -46,7 +46,7 @@
 <br>
 Welcome to<b> Yearbook'17</b> Portal </h3>
 
-   <form method="post" action="{{ route('login') }}" class="form main-title center">
+   <form method="post" action="/yearbook/login" class="form main-title center">
 
                 {{ csrf_field() }}
 
@@ -75,10 +75,10 @@ Welcome to<b> Yearbook'17</b> Portal </h3>
 
 <!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 <div class="slideshow">
-  <div class="slideshow-image" style="background-image: url('../screen.png')"></div>
-  <div class="slideshow-image" style="background-image: url('../12.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('../2.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('../back.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('yearbook/screen.png')"></div>
+  <div class="slideshow-image" style="background-image: url('yearbook/12.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('yearbook/2.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('yearbook/back.jpg')"></div>
 </div>
   
 

@@ -31,12 +31,12 @@ class FileController extends Controller
 
         		]);
 				$image = $request->file('fileToUpload');//image
-				$input['imagename'] = time().'.'.$image->getClientOriginalExtension();//name of file
-				$destinationPath = public_path('/uploads');//destination of image in public/uploads
+				$input['imagename'] = 'yearbook'.time().'.'.$image->getClientOriginalExtension();//name of file
+				$destinationPath = public_path();//destination of image in public/uploads
 				if($image->move($destinationPath, $input['imagename']))
 			{
 
-				$user->pro_pic = 'uploads/'.$input['imagename'];
+				$user->pro_pic = $input['imagename'];
 				if(request('motto'))
 				{
 					$user->view_self = request('motto');//edit 'view_self' column of the current user

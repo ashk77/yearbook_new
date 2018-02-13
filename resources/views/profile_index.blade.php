@@ -80,7 +80,7 @@ body{
 }
 </style>
 
-<link rel="stylesheet" type="text/css" href="../css/animate.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/animate.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -95,21 +95,21 @@ crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="../css/business-casual.min.css" rel="stylesheet">
+<link href="http://www.sac.iitkgp.ac.in/yearbook_files/css/business-casual.min.css" rel="stylesheet">
 
 
-<link rel="stylesheet" type="text/css" href="../css/autocomplete.css">
-<script src="../js/autocomplete.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/autocomplete.css">
+<script src="http://www.sac.iitkgp.ac.in/yearbook_files/js/autocomplete.js"></script>
 
 <!-- Bootstrap core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.sac.iitkgp.ac.in/yearbook_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="../css/business-casual.min.css" rel="stylesheet">
+<link href="http://www.sac.iitkgp.ac.in/yearbook_files/css/business-casual.min.css" rel="stylesheet">
 
 </head>
 
@@ -192,7 +192,7 @@ crossorigin="anonymous"></script>
                       $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
                       @endphp  
                       <div class="col-lg-3 col-sm-3 col-3 text-center">
-                        <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
+                        <img src="{{$pic[0]}}" class="w-50 rounded-circle">
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
@@ -214,7 +214,7 @@ crossorigin="anonymous"></script>
     
     
     <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="../img/about.jpg" alt="">
+      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
       <div class="about-heading-content">
         <div class="row">
           
@@ -222,7 +222,7 @@ crossorigin="anonymous"></script>
 
             <div class="bg-faded rounded p-5">
               <div class="row">
-                <div class="col l6 m6 s6" style="padding: 23px;margin-left: 30%;margin-top: -20%;"><img class="img-thumbnail" width="180px"; height= "180px";  src="<?php if (!empty(Auth::user()->pro_pic)){echo '../'.Auth::user()->pro_pic; } else { echo '../ind/shot.jpg';}?>" alt=""  id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;"></div>
+                <div class="col l6 m6 s6" style="padding: 23px;margin-left: 30%;margin-top: -20%;"><img class="img-thumbnail" width="180px"; height= "180px";  src="<?php if (!empty(Auth::user()->pro_pic)){echo Auth::user()->pro_pic; } else { echo 'ind/shot.jpg';}?>" alt=""  id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;"></div>
                 
 
               </div> 
