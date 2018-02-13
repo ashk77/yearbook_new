@@ -607,7 +607,7 @@ crossorigin="anonymous"></script>
                         </div>
                       </div> </span>
                     </h2>
-                    <p class="mb-0"> Here’s what your friends written about you! Your testimonials are displayed below. You can approve or disapprove them by selecting the option shown beside each testimonial. The approved ones shall be a part of your yearbook.</p>
+                    <p class="mb-0"> Here’s what your friends have written about you! Your testimonials are displayed below. You can approve or disapprove them by selecting the option shown beside each testimonial. The approved ones shall be a part of your yearbook.</p>
                     <br>
                     
                     <ul id="tabs-swipe-demo" class="nav nav-tabs nav-justified">
