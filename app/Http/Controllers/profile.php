@@ -43,7 +43,7 @@ class profile extends Controller
     views::where('read',1)->where('user',Auth::user()->name)->update(array('read' => 0));
 
 
-    return redirect('/profile_index') ;
+    return redirect('/yearbook/profile_index') ;
 }
 
 }

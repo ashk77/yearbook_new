@@ -1,11 +1,11 @@
 
 <style type="text/css">
-  .table-scrollable
-  {
+.table-scrollable
+{
 
-    height: 350px;
-    overflow: scroll;
-  }
+  height: 350px;
+  overflow: scroll;
+}
 </style>
 
 
@@ -13,7 +13,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" style="background-color: rgba(67,100,107,0.75);">
       <div class="modal-header">
-        
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
       </div>
       <div class="modal-body">
@@ -23,7 +23,7 @@
           </div>
           <div class="col" style="margin-right: 11px ; border: 1px solid;">
             <br>
-            <form class="form" id="form-comment" action="/comment" method="post">
+            <form class="form" id="form-comment" action="/yearbook/comment" method="post">
               {{csrf_field()}}
               <input id="comment-token" type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -35,7 +35,7 @@
                 <div class="col approval" id="like"></div>
               </div>
             </form>
-<br>
+            <br>
 
 
             <div id="comments" class="table-scrollable" style="text-align: center;">
@@ -49,24 +49,25 @@
 </div>
 
 @foreach($images as $image)
-      @if(file_exists($image['url']))
-      <section class="page-section">
-        <div class="container">
-          <div class="product-item">
-            <div class="product-item-title d-flex">
-              <div class="bg-faded p-5 d-flex ml-auto rounded">
-                <h2 class="section-heading mb-0">
-                  <!--<span class="section-heading-upper">Blended to Perfection</span>-->
-                  @php
-                  $name = App\User::where('rollno',$image['rollno'])->get()->toArray();
+@if(true)
 
-                  @endphp
-                  <span class="section-heading-lower">{{$name[0]['name']}}</span>
-                  <span class="section-heading-upper">"{{$image['caption']}}"</span>
-                </h2>
-              </div>
-            </div>
-            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="../{{$image['url']}}" id="{{$image['id']}}"  data-toggle="tooltip" data-placement="top" title="Click the image!" style="cursor: pointer;">
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <h2 class="section-heading mb-0">
+            <!--<span class="section-heading-upper">Blended to Perfection</span>-->
+            @php
+            $name = App\User::where('rollno',$image['rollno'])->get()->toArray();
+
+            @endphp
+            <span class="section-heading-lower">{{$name[0]['name']}}</span>
+            <span class="section-heading-upper">"{{$image['caption']}}"</span>
+          </h2>
+        </div>
+      </div>
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{$image['url']}}" id="{{$image['id']}}"  data-toggle="tooltip" data-placement="top" title="Click the image!" style="cursor: pointer;">
        <!-- <div class="product-item-description d-flex mr-auto">
           <div class="bg-faded p-5 rounded">
             <p class="mb-0">{{$image['caption']}}</p>
@@ -79,117 +80,117 @@
   @endforeach
 
   
-<script type="text/javascript">
+  <script type="text/javascript">
 
 
-  $('#like').click('#like', function() {
-    var formData = {
-
-      'pic_id' : $('.enlargeImageModalSource').attr('id'),
-      '_token' : $('#comment-token').val()
-    }
-
-    $.ajax({
-      url: "/likeadd",
-      type: "POST",
-      data: formData,
-
-      success: function(response)
-      {
-
-       document.getElementById("like").innerHTML = response;
-     },
-     error: function(data)
-     {
-
-     }
-   });
-
-  });
-  $(function() {
-    $('.product-item-img').on('click', function() {
-      $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
-      $('.enlargeImageModalSource').attr('id', $(this).attr('id'));
-      $('#enlargeImageModal').modal('show');
+    $('#like').click('#like', function() {
       var formData = {
+
+        'pic_id' : $('.enlargeImageModalSource').attr('id'),
+        '_token' : $('#comment-token').val()
+      }
+
+      $.ajax({
+        url: "/yearbook/likeadd",
+        type: "POST",
+        data: formData,
+
+        success: function(response)
+        {
+
+         document.getElementById("like").innerHTML = response;
+       },
+       error: function(data)
+       {
+
+       }
+     });
+
+    });
+    $(function() {
+      $('.product-item-img').on('click', function() {
+        $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+        $('.enlargeImageModalSource').attr('id', $(this).attr('id'));
+        $('#enlargeImageModal').modal('show');
+        var formData = {
+          'comments' : $('textarea[name=comment]').val(),
+          'pic_id' : $('.enlargeImageModalSource').attr('id'),
+          '_token' : $('#comment-token').val()
+        }
+        $.ajax({
+          url: "/yearbook/commentadd",
+          type: "POST",
+          data: formData,
+
+          success: function(response)
+          {
+
+            document.getElementById("comments").innerHTML = response;
+          },
+          error: function(data)
+          {
+
+          }
+        });
+
+
+        $.ajax({
+          url: "/yearbook/likes",
+          type: "POST",
+          data: formData,
+
+          success: function(response)
+          {
+
+            document.getElementById("like").innerHTML = response;
+
+          },
+          error: function(data)
+          {
+
+
+          }
+        });
+
+      });
+    });
+
+
+    $(document).ready(function (e) {
+      $('form#form-comment').on('submit', function(e) {
+       e.preventDefault();
+       var formData = {
         'comments' : $('textarea[name=comment]').val(),
         'pic_id' : $('.enlargeImageModalSource').attr('id'),
         '_token' : $('#comment-token').val()
       }
+      console.log(formData);
+
       $.ajax({
-        url: "/commentadd",
+        url: "/yearbook/comment",
         type: "POST",
         data: formData,
 
         success: function(response)
         {
-
+          console.log('Added Comments');
+          document.getElementById("textarea").value="";
           document.getElementById("comments").innerHTML = response;
         },
         error: function(data)
         {
-
+          console.log('Error in comment');  
         }
       });
-
-
-      $.ajax({
-        url: "/likes",
-        type: "POST",
-        data: formData,
-
-        success: function(response)
-        {
-
-          document.getElementById("like").innerHTML = response;
-
-        },
-        error: function(data)
-        {
-
-
-        }
-      });
-
     });
-  });
-
-
-  $(document).ready(function (e) {
-    $('form#form-comment').on('submit', function(e) {
-     e.preventDefault();
-     var formData = {
-      'comments' : $('textarea[name=comment]').val(),
-      'pic_id' : $('.enlargeImageModalSource').attr('id'),
-      '_token' : $('#comment-token').val()
-    }
-    console.log(formData);
-
-    $.ajax({
-      url: "/comment",
-      type: "POST",
-      data: formData,
-
-      success: function(response)
-      {
-        console.log('Added Comments');
-        document.getElementById("textarea").value="";
-        document.getElementById("comments").innerHTML = response;
-      },
-      error: function(data)
-      {
-        console.log('Error in comment');  
-      }
     });
-  });
-  });
 
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 
 
-  var user = <?php echo $user;?>;
+    var user = <?php echo $user;?>;
     //console.log(user[0].name);
     var names = [];
     for (var i = 0; i < user.length; i++) {

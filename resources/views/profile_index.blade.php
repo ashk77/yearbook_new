@@ -95,21 +95,21 @@ crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/business-casual.min.css" rel="stylesheet">
+<link href="../css/business-casual.min.css" rel="stylesheet">
 
 
-<link rel="stylesheet" type="text/css" href="css/autocomplete.css">
-<script src="js/autocomplete.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/autocomplete.css">
+<script src="../js/autocomplete.js"></script>
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom fonts for this template -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/business-casual.min.css" rel="stylesheet">
+<link href="../css/business-casual.min.css" rel="stylesheet">
 
 </head>
 
@@ -126,7 +126,7 @@ crossorigin="anonymous"></script>
         <ul class="navbar-nav mx-auto">
           <li class="nav-item px-lg-6">
 
-            <form action="search/" method="POST" class="form-inline">
+            <form action="/yearbook/search/" method="POST" class="form-inline">
               {{ csrf_field() }}
               <div class="form-group" >
                 <input type="text" name="search" required="required" id="search" class="form-control" placeholder="Search your friend here">
@@ -137,15 +137,15 @@ crossorigin="anonymous"></script>
             </form>
           </li>
           <li class="nav-item px-lg-3">
-            <a class="nav-link text-uppercase text-expanded" href="/home">Home
+            <a class="nav-link text-uppercase text-expanded" href="/yearbook/home">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item px-lg-3">
-            <a class="nav-link text-uppercase text-expanded" href="/trending">Trending</a>
+            <a class="nav-link text-uppercase text-expanded" href="/yearbook/trending">Trending</a>
           </li>
           <li class="nav-item active px-lg-3">
-            <a class="nav-link text-uppercase text-expanded" href="/profile_index">{{Auth::user()->name}}</a>
+            <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
           </li>
           <li class="nav-item px-lg-3 dropdown">
             <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -153,13 +153,13 @@ crossorigin="anonymous"></script>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" >
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/details">Edit Details</a>
+                <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
               </li>
              <!--<li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="#">Change Password </a>
               </li>-->
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/logout">Logout </a>
+                <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>
 
             </ul>
@@ -185,14 +185,14 @@ crossorigin="anonymous"></script>
                   </div>
                 </li>
                 @foreach($notifications as $notification)
-                <a href="/read/{{$notification['id']}}">
+                <a href="/yearbook/read/{{$notification['id']}}">
                   <li class="notification-box">
                     <div class="row">
                       @php
                       $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
                       @endphp  
                       <div class="col-lg-3 col-sm-3 col-3 text-center">
-                        <img src="../{{$pic[0]}}" class="w-50 rounded-circle">
+                        <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
@@ -214,7 +214,7 @@ crossorigin="anonymous"></script>
     
     
     <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
+      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="../img/about.jpg" alt="">
       <div class="about-heading-content">
         <div class="row">
           
@@ -222,7 +222,7 @@ crossorigin="anonymous"></script>
 
             <div class="bg-faded rounded p-5">
               <div class="row">
-                <div class="col l6 m6 s6" style="padding: 23px;margin-left: 30%;margin-top: -20%;"><img class="img-thumbnail" width="180px"; height= "180px";  src="<?php if (!empty(Auth::user()->pro_pic)){echo Auth::user()->pro_pic; } else { echo 'ind/shot.jpg';}?>" alt=""  id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;"></div>
+                <div class="col l6 m6 s6" style="padding: 23px;margin-left: 30%;margin-top: -20%;"><img class="img-thumbnail" width="180px"; height= "180px";  src="<?php if (!empty(Auth::user()->pro_pic)){echo '../'.Auth::user()->pro_pic; } else { echo '../ind/shot.jpg';}?>" alt=""  id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;"></div>
                 
 
               </div> 
@@ -353,8 +353,8 @@ crossorigin="anonymous"></script>
         </footer>
 
         <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../vendor/jquery/jquery.min.js"></script>
+        <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
       </body>
 
@@ -373,7 +373,7 @@ crossorigin="anonymous"></script>
           var id = $(this).attr('data-id');
           var query= id;
 
-          window.location="/approve/"+id;
+          window.location="/yearbook/approve/"+id;
 
         }); 
         $('.disapprove').click('.disapprove',function(){
@@ -384,7 +384,7 @@ crossorigin="anonymous"></script>
 
           var query= '1';
 
-          window.location="/disapprove/"+id;
+          window.location="/yearbook/disapprove/"+id;
 
         }); 
 

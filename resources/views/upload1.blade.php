@@ -26,11 +26,11 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/business-casual.min.css" rel="stylesheet">
+  <link href="../css/business-casual.min.css" rel="stylesheet">
 
 
-  <link rel="stylesheet" type="text/css" href="css/autocomplete.css">
-  <script src="js/autocomplete.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/autocomplete.css">
+  <script src="../js/autocomplete.js"></script>
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.1.3/cropper.css" />
@@ -119,7 +119,7 @@
 
 <!-- Navigation--> 
 <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background-color: rgba(67,100,107,0.55);">
-  <a class="navbar-brand text-light" href="http://www.sac.iitkgp.ac.in"><img height="90" width="250" src="sac.png" alt="someimg"/></a>
+  <a class="navbar-brand text-light" href="http://www.sac.iitkgp.ac.in"><img height="90" width="250" src="../sac.png" alt="someimg"/></a>
   <div class="container">
     <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="http://www.sac.iitkgp.ac.in">Yearbook</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,7 +129,7 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item px-lg-6">
 
-          <form action="search/" method="POST" class="form-inline">
+          <form action="/yearbook/search/" method="POST" class="form-inline">
             {{ csrf_field() }}
             <div class="form-group" >
               <input type="text" name="search" required="required" id="search" class="form-control" placeholder="Search your friend here">
@@ -140,15 +140,15 @@
           </form>
         </li>
         <li class="nav-item px-lg-3">
-          <a class="nav-link text-uppercase text-expanded" href="/home">Home
+          <a class="nav-link text-uppercase text-expanded" href="/yearbook/home">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item px-lg-3">
-          <a class="nav-link text-uppercase text-expanded" href="/trending">Trending</a>
+          <a class="nav-link text-uppercase text-expanded" href="/yearbook/trending">Trending</a>
         </li>
         <li class="nav-item px-lg-3">
-          <a class="nav-link text-uppercase text-expanded" href="/profile_index">{{Auth::user()->name}}</a>
+          <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
         </li>
         <li class="nav-item px-lg-3 dropdown">
           <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -156,13 +156,13 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-right" >
             <li class="head text-dark bg-light">
-              <a class="nav-link text-dark" href="/details">Edit Details</a>
+              <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
             </li>
            <!--<li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="#">Change Password </a>
               </li>-->
             <li class="head text-dark bg-light">
-              <a class="nav-link text-dark" href="/logout">Logout </a>
+              <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
             </li>
 
           </ul>
@@ -188,14 +188,14 @@
                 </div>
               </li>
               @foreach($notifications as $notification)
-              <a href="/read/{{$notification['id']}}">
+              <a href="/yearbook/read/{{$notification['id']}}">
                 <li class="notification-box">
                   <div class="row">
                     @php
                     $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
                     @endphp  
                     <div class="col-lg-3 col-sm-3 col-3 text-center">
-                      <img src="../{{$pic[0]}}" class="w-50 rounded-circle">
+                      <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
                     </div> 
                     <div class="col-lg-8 col-sm-8 col-8">
                       <strong class="text-info">{{$notification['user']}}</strong>
@@ -229,7 +229,7 @@
             <br>
             
             <br>
-            <form id="upload-image-form" action="/upload" method="post" enctype="multipart/form-data">
+            <form id="upload-image-form" action="/yearbook/upload" method="post" enctype="multipart/form-data">
               <input id="signup-token" type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
                 <label for="classifiers">Select Category: (Max size: 5MB)</label>
@@ -330,7 +330,7 @@ $(document).ready(function (e) {
      }
      console.log("crop image",originalData);
      $.ajax({
-      url: "/upload",
+      url: "/yearbook/upload",
       type: "POST",
       data: formdata,
       contentType: false,

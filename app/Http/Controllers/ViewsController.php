@@ -27,7 +27,7 @@ class ViewsController extends Controller
 
             'approval' => '1',
         ]);
-        return redirect('/profile_index');
+        return redirect('/yearbook/profile_index');
 
     }
     public function disapproval($id)
@@ -38,7 +38,7 @@ class ViewsController extends Controller
 
             'approval' => '0',
         ]);
-        return redirect('/profile_index');
+        return redirect('/yearbook/profile_index');
 
     }
     public function write($roll)
@@ -60,14 +60,14 @@ class ViewsController extends Controller
         
 
         
-        return redirect('/profile_index/'.$roll) ;
+        return redirect('/yearbook/profile_index/'.$roll) ;
     }
     public function read($id)
     {
        $post = views::find($id);
         $post->read = 0;
         $post->save();
-        return redirect('/profile_index') ;
+        return redirect('/yearbook/profile_index') ;
     }
 
 }

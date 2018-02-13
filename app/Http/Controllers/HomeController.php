@@ -48,14 +48,25 @@ class HomeController extends Controller
         {
 
             $name = request('search');
-            $user = User::where('name',$name)->get();
-            
-            if( $user->isNotEmpty()){
-                $roll = $user[0]['rollno']; 
-                return redirect("/profile_index/".$roll);
+            $options = User::where('name',$name)->get();
+            //dd(count($options));
+            if(count($options)>1)
+            {
+                $user = User::get();
+                $roll = Auth::user()->rollno;
+                $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+
+                return view('options',compact('notifications','user','options'));
             }
             else
-                return back()->with('Error','Sorry, we cannot find your friend in our database');
+            {
+                if( $options->isNotEmpty()){
+                    $roll = $options[0]['rollno']; 
+                    return redirect("/yearbook/profile_index/".$roll);
+                }
+                else
+                    return back()->with('Error','Sorry, we cannot find your friend in our database');
+            }
         }
 
 
@@ -72,21 +83,21 @@ class HomeController extends Controller
         public function edit(Request $request)
         {
 
-           $this->validate(request(),[
-           
+         $this->validate(request(),[
+
             'phone' => 'required|min:10|max:10',
 
         ]);
-           $user = Auth::user();
-           $user->email = request('email');
-           $user->HOR = request('HOR');
-           $user->course = request('course');
-           $user->department = request('department');
-           $user->phone = request('phone');
-           $user->save();
-           return back();
-           
+         $user = Auth::user();
+         $user->email = request('email');
+         $user->HOR = request('HOR');
+         $user->course = request('course');
+         $user->department = request('department');
+         $user->phone = request('phone');
+         $user->save();
+         return back();
 
-       }
-   }
+
+     }
+ }
 

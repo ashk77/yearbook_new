@@ -20,7 +20,7 @@ class WriteupController extends Controller
     }
     public function index()
     {
-    	//$writeups = writeup::all();
+        //$writeups = writeup::all();
 
         $writeups = writeup::where('rollno',Auth::user()->rollno)->latest()->get();
         
@@ -37,35 +37,35 @@ class WriteupController extends Controller
     {
 
 
-    	writeup::create([
+        writeup::create([
 
-    		'writeup' => request('writeup'),
+            'writeup' => request('writeup'),
 
-    		'topic' => request('topic'),
+            'topic' => request('topic'),
 
-    		'rollno' => Auth::user()->rollno
+            'rollno' => Auth::user()->rollno
       ]);
 
 
 
-    	/*$writeup = new \App\writeup;
+        /*$writeup = new \App\writeup;
 
-    	$writeup->rollno = $user->rollno ;
+        $writeup->rollno = $user->rollno ;
 
-    	$writeup->writeup = request('writeup');
+        $writeup->writeup = request('writeup');
 
-    	$writeup->topic = request('topic');
+        $writeup->topic = request('topic');
 
-    	$writeup->save(); */
+        $writeup->save(); */
 
-    	return redirect('/writeup');
+        return redirect('/yearbook/writeup');
 
     }
 
     public function delete($id)
     {
         \DB::table('writeups')->where('id',$id)->delete();
-        return redirect('/writeup');
+        return redirect('/yearbook/writeup');
     }
 
 

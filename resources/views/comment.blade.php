@@ -388,7 +388,7 @@
 
 
 <p class="box2">Write about your friend!</p> 
-        <form action="/writetestimony/{{$data['rollno']}}" onSubmit="alert('Your views will be added in his yearbook after his registration and approval');" method="POST" style="padding-top: 0;">
+        <form action="/yearbook/writetestimony/{{$data['rollno']}}" onSubmit="alert('Your views will be added in his yearbook after his registration and approval');" method="POST" style="padding-top: 0;">
           {{csrf_field()}}
         <div class="box4">
           <div class="row">

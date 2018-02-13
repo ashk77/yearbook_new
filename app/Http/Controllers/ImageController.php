@@ -55,7 +55,7 @@ class ImageController extends Controller
 			$caption = request('caption');
 			Image::create([
 				
-				'url' => 'uploads/'.$name,
+				'url' => '/uploads/'.$name,
 				'rollno' => $user->rollno,
 				'caption' => $caption,
 				'classifier' => $classifier,
