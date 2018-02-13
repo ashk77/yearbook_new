@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Mail;
 class InviteController extends Controller
 {
     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function invite()
 	{
     // show the user a form with an email field to invite a new user

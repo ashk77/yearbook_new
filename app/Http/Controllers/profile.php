@@ -11,6 +11,10 @@ use App\Image;
 class profile extends Controller
 {
     //
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
    public function index()
    {
        $myviews = views::where('depmate',Auth::user()->rollno)->latest()->get();

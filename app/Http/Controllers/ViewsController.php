@@ -11,7 +11,10 @@ class ViewsController extends Controller
 {
     //
 
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function approve(Request $request)
     {
         $data = array();

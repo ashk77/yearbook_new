@@ -20,7 +20,7 @@ Auth::routes()
 	
 
 
-	Route::get('yearbook/', function () {
+	Route::get('/yearbook', function () {
 		return view('auth.login');
 	});
 
