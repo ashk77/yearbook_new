@@ -277,7 +277,7 @@
           @if(!empty(Auth::user()->pro_pic))
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 600px" src="../{{Auth::user()->pro_pic}}" alt="">
           @else
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 600px" src="../img/intro.jpg" alt="">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" style="height: 500px; opacity: 0.78;" src="../img/intro.jpg" alt="">
           @endif
           <div class="intro-text left-0 text-center bg-faded p-5 rounded">
             <h2 class="section-heading mb-4">
