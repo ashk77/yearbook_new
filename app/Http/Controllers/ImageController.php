@@ -52,7 +52,10 @@ class ImageController extends Controller
 			$file->move(public_path(), $name);
 
 			$classifier = request('classifier');
-			$caption = request('caption');
+			if(!empty(request('caption')))
+				$caption = request('caption');
+			else
+				$caption = '';
 			Image::create([
 				
 				'url' => 'yearbook/'.$name,

@@ -244,7 +244,7 @@
                 <img id="crop-image" src="" class="img-thumbnail">
                 <div class="form-group">
                   <label for="caption">Caption:</label>
-                  <textarea class="form-control" rows="2" cols="15" name="caption" id="caption" required="required"></textarea>
+                  <textarea class="form-control" rows="2" cols="15" name="caption" id="caption" ></textarea>
                 </div> 
               </div>
               <div class="form-group">
