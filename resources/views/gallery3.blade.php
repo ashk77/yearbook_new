@@ -63,7 +63,9 @@
 
             @endphp
             <span class="section-heading-lower">{{$name[0]['name']}}</span>
+            @if(!empty($image['caption']))
             <span class="section-heading-upper">"{{$image['caption']}}"</span>
+            @endif
           </h2>
         </div>
       </div>

@@ -31,7 +31,7 @@
   <link rel="stylesheet" type="text/css" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/autocomplete.css">
   <script src="http://www.sac.iitkgp.ac.in/yearbook_files/js/autocomplete.js"></script>
 
-<style type="text/css">
+  <style type="text/css">
   .table-scrollable
   {
 
@@ -40,12 +40,12 @@
   }
 </style>
 
-  <style type="text/css">
-  .pagination {
-   justify-content: center;
- }
+<style type="text/css">
+.pagination {
+ justify-content: center;
+}
 
- .dropdown-menu{
+.dropdown-menu{
   top: 60px;
   right: 0px;
   left: unset;
@@ -117,7 +117,7 @@
                 <div class="col approval" id="like"></div>
               </div>
             </form>
-<br>
+            <br>
 
             <div id="comments" class="table-scrollable" style="text-align: center;">
             </div>
@@ -259,8 +259,9 @@
                   @endphp
                 </strong>
                 <span class="section-heading-lower">{{$name[0]['name']}}</span>
+                @if(!empty($image['caption']))
                 <span class="section-heading-upper">"{{$image['caption']}}"</span>
-
+                @endif
               </h2>
               <strong>{{$image['created_at']->diffForHumans() }}</strong>
             </div>
