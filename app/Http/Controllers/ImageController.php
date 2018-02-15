@@ -35,13 +35,13 @@ class ImageController extends Controller
 
 		$user = Auth::user();
 		
-		if($request->hasFile('croppedImage')) {
-			$file = $request->file('croppedImage');
+		if($request->hasFile('image')) {
+			$file = $request->file('image');
 			$file_original = $request->file('image');
 			print_r($file);
 			$this->validate($request, [
 
-				'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:50000',
+				'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:5000',
 				'classifier' => 'required'
 			]);
            //you also need to keep file extension as well
