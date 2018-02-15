@@ -17,7 +17,7 @@
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Raleway:300'>
 
-      <link rel="stylesheet" href="http://localhost/yearbook_files/css/style1.css">
+      <link rel="stylesheet" href="http://www.sac.iitkgp.ac.in/yearbook_files/css/style1.css">
 
   
 </head>
@@ -44,7 +44,7 @@
   <div class="clock-toogle__toogle"></div>
 </div>           
 <br>
-Welcome to<b> Yearbook'17</b> Portal </h3>
+Welcome to<b> Yearbook'18</b> Portal </h3>
 
    <form method="post" action="/yearbook/login" class="form main-title center">
 
@@ -68,17 +68,17 @@ Welcome to<b> Yearbook'17</b> Portal </h3>
                 </div>
             </form>
 
-            <p class=" center sub-title main-title" >Contact us at:<br> <a href="mailto:yearbook2k17.kgp@gmail.com"> yearbook2k17.kgp@gmail.com<a><i class="material-icons">error_outline</i><span class="tooltip">If you are not graduating this year, but want to write about your friends who are graduating, send us the testimonials via mail at yearbook2k17.kgp@gmail.com</span></a></p>
+            <p class=" center sub-title main-title" >Contact us at:<br> <a href="mailto:yearbook2k18.kgp@gmail.com"> yearbook2k18.kgp@gmail.com<a><i class="material-icons">error_outline</i><span class="tooltip">If you are not graduating this year, but want to write about your friends who are graduating, send us the testimonials via mail at yearbook2k18.kgp@gmail.com</span></a></p>
 
             </small></h1>
   </div>
 
 <!-- You can add more ".slideshow-image" elements, but remember to update the "$items" variable on SCSS -->
 <div class="slideshow">
-  <div class="slideshow-image" style="background-image: url('yearbook/screen.png')"></div>
-  <div class="slideshow-image" style="background-image: url('yearbook/12.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('yearbook/2.jpg')"></div>
-  <div class="slideshow-image" style="background-image: url('yearbook/back.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('screen.png')"></div>
+  <div class="slideshow-image" style="background-image: url('12.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('2.jpg')"></div>
+  <div class="slideshow-image" style="background-image: url('back.jpg')"></div>
 </div>
   
 
