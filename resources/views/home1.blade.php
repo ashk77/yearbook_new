@@ -80,7 +80,7 @@
 </style>
 
 
- <!--for tutorial introjs file -->
+<!--for tutorial introjs file -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/introjs.css">
 
 </head>
@@ -128,9 +128,9 @@
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
               </li>
-              <!--<li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="#">Change Password </a>
-              </li>-->
+              <li class="head text-dark bg-light">
+                <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+              </li>
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>
@@ -183,9 +183,9 @@
 
             <!-- tutorial  just add data-step and data -intro in any html element to include it in tutorial-->
             
-           <li class="nav-item px-lg-3">
-                  <a class="nav-link text-uppercase text-expanded"  href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">Tutorial <i class="fa fa-question-circle" style="font-size:18px"></i></a>
-           </li>
+            <li class="nav-item px-lg-3">
+              <a class="nav-link text-uppercase text-expanded"  href="javascript:void(0);" onclick="javascript:introJs().setOption('showProgress', true).start();">Tutorial <i class="fa fa-question-circle" style="font-size:18px"></i></a>
+            </li>
 
           </ul>
         </div>
@@ -343,8 +343,8 @@
       </div>
     </footer>
 
-  <!-- for intro js in tutorial-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.js"></script> 
+    <!-- for intro js in tutorial-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.7.0/intro.js"></script> 
     
   </body>
 

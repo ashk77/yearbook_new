@@ -107,3 +107,7 @@ Route::get('/accept/{token}', 'InviteController@accept')->name('accept');
 Route::get('/trending','CountController@index');
 
 
+//Route::get('/classmap','MapsController@index');
+Route::get('/changepassword','HomeController@showpassword');
+
+Route::post('/changepassword','HomeController@editpassword');

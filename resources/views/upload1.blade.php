@@ -158,156 +158,156 @@
             <li class="head text-dark bg-light">
               <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
             </li>
-           <!--<li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="#">Change Password </a>
-              </li>-->
-              <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
+            <li class="head text-dark bg-light">
+              <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+            </li>
+            <li class="head text-dark bg-light">
+              <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="nav-item px-lg-3 dropdown">
+          <a class="nav-link text-light" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
+
+            @if(count($notifications))
+            <i class="fa fa-bell" style="color: blue;">
+              <span lass="badge" style="position: relative; top: 6px; left: -6px;color: white; font-size: 19px;">{{count($notifications)}}</span>
+            </i>
+            @else
+            <i class="fa fa-bell"></i>
+            @endif
+
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li class="head text-light bg-dark">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12 col-12">
+                  <span>Notifications ({{count($notifications)}})</span>
+
+                </div>
               </li>
-
-            </ul>
-          </li>
-          <li class="nav-item px-lg-3 dropdown">
-            <a class="nav-link text-light" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
-
-              @if(count($notifications))
-              <i class="fa fa-bell" style="color: blue;">
-                <span lass="badge" style="position: relative; top: 6px; left: -6px;color: white; font-size: 19px;">{{count($notifications)}}</span>
-              </i>
-              @else
-              <i class="fa fa-bell"></i>
-              @endif
-
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="head text-light bg-dark">
-                <div class="row">
-                  <div class="col-lg-12 col-sm-12 col-12">
-                    <span>Notifications ({{count($notifications)}})</span>
-
+              @foreach($notifications as $notification)
+              <a href="/yearbook/read/{{$notification['id']}}">
+                <li class="notification-box">
+                  <div class="row">
+                    @php
+                    $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
+                    @endphp  
+                    <div class="col-lg-3 col-sm-3 col-3 text-center">
+                      <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
+                    </div> 
+                    <div class="col-lg-8 col-sm-8 col-8">
+                      <strong class="text-info">{{$notification['user']}}</strong>
+                      <div>
+                        {{$notification['views']}}
+                      </div>
+                      <small class="text-warning">{{$notification['created_at']}}</small>
+                    </div>    
                   </div>
                 </li>
-                @foreach($notifications as $notification)
-                <a href="/yearbook/read/{{$notification['id']}}">
-                  <li class="notification-box">
-                    <div class="row">
-                      @php
-                      $pic = App\User::where('name',$notification['user'])->pluck('pro_pic');
-                      @endphp  
-                      <div class="col-lg-3 col-sm-3 col-3 text-center">
-                        <img src="../../{{$pic[0]}}" class="w-50 rounded-circle">
-                      </div> 
-                      <div class="col-lg-8 col-sm-8 col-8">
-                        <strong class="text-info">{{$notification['user']}}</strong>
-                        <div>
-                          {{$notification['views']}}
-                        </div>
-                        <small class="text-warning">{{$notification['created_at']}}</small>
-                      </div>    
-                    </div>
-                  </li>
-                </a>
-                @endforeach           
-              </ul>
-            </li>
-          </ul>
-        </div>
+              </a>
+              @endforeach           
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 
-    <section class="page-section cta" style="background-color: rgba(106,106,65,0.55);">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper"></span>
-                <span class="section-heading-lower">Upload Photos</span>
-              </h2>
-              <p class="mb-0">What better way to capture a memory than printing it in your yearbook? Share with us the pictures of your most memorable times at KGP and we’ll make it a part of your memoir. Select the category for your picture/s and upload them using the option below.</p>
-              <br>
+  <section class="page-section cta" style="background-color: rgba(106,106,65,0.55);">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper"></span>
+              <span class="section-heading-lower">Upload Photos</span>
+            </h2>
+            <p class="mb-0">What better way to capture a memory than printing it in your yearbook? Share with us the pictures of your most memorable times at KGP and we’ll make it a part of your memoir. Select the category for your picture/s and upload them using the option below.</p>
+            <br>
 
-              <br>
-              <form id="upload-image-form" action="/yearbook/upload" method="post" enctype="multipart/form-data">
-                <input id="signup-token" type="hidden" name="_token" value="{{ csrf_token() }}">
+            <br>
+            <form id="upload-image-form" action="/yearbook/upload" method="post" enctype="multipart/form-data">
+              <input id="signup-token" type="hidden" name="_token" value="{{ csrf_token() }}">
+              <div class="form-group">
+                <label for="classifiers">Select Category: (Max size: 5MB)</label>
+                <select class="form-control" name="classifier" >
+                  <option value="dep">DEPARTMENT PHOTOS</option>
+                  <option value="hall">HALL PHOTOS</option>
+                  <option value="fest">FEST PHOTOS</option>
+                  <option value="misc">OTHER MOMENTS AT KGP</option>
+                </select>
+              </div>
+              <div id="cropp-image-div" style="display: none">
+                <img id="crop-image" src="" class="img-thumbnail">
                 <div class="form-group">
-                  <label for="classifiers">Select Category: (Max size: 5MB)</label>
-                  <select class="form-control" name="classifier" >
-                    <option value="dep">DEPARTMENT PHOTOS</option>
-                    <option value="hall">HALL PHOTOS</option>
-                    <option value="fest">FEST PHOTOS</option>
-                    <option value="misc">OTHER MOMENTS AT KGP</option>
-                  </select>
-                </div>
-                <div id="cropp-image-div" style="display: none">
-                  <img id="crop-image" src="" class="img-thumbnail">
-                  <div class="form-group">
-                    <label for="caption">Caption:</label>
-                    <textarea class="form-control" rows="2" cols="15" name="caption" id="caption" ></textarea>
-                  </div> 
-                </div>
-                <div class="form-group">
-                  <input type="file" name="image" id="image" accept="image/*" required>
-                </div>
-                <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
-              </form>
-              <br>
-              <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-                Uploading image...
-                <div class="progress">
-                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                  </div>
+                  <label for="caption">Caption:</label>
+                  <textarea class="form-control" rows="2" cols="15" name="caption" id="caption" ></textarea>
+                </div> 
+              </div>
+              <div class="form-group">
+                <input type="file" name="image" id="image" accept="image/*" required>
+              </div>
+              <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
+            </form>
+            <br>
+            <div class="alert alert-info" id="loading" style="display: none;" role="alert">
+              Uploading image...
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
 
-    @include('gallery3')
+  @include('gallery3')
 
-    <footer class="footer text-faded text-center py-5">
-      <div class="container">
-        <p class="m-0 small">Copyright &copy; Yearbook 2018</p>
-        <p class="m-0 small"><a target="_blank" href="http://www.sac.iitkgp.ac.in/team.php">Contact Us</a></p>
-      </div>
-    </footer>
-  </body>
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0 small">Copyright &copy; Yearbook 2018</p>
+      <p class="m-0 small"><a target="_blank" href="http://www.sac.iitkgp.ac.in/team.php">Contact Us</a></p>
+    </div>
+  </footer>
+</body>
 
 
-  <script type="text/javascript">
-   /*jslint browser: true, white: true, eqeq: true, plusplus: true, sloppy: true, vars: true*/
-   /*global $, console, alert, FormData, FileReader*/
-   function selectImage(e) {
-    $('#file').css("color", "green");
-    console.log("selectImage called"); 
-    $('#bootstrap-modal').modal('show');
-    $("#bootstrap-modal").on("shown.bs.modal", function() {
-      $('#image-preview-div').css("display", "block");
-      $('#preview-img').attr('src', e.target.result);
-      $('#preview-img').css('width', '450px');
+<script type="text/javascript">
+ /*jslint browser: true, white: true, eqeq: true, plusplus: true, sloppy: true, vars: true*/
+ /*global $, console, alert, FormData, FileReader*/
+ function selectImage(e) {
+  $('#file').css("color", "green");
+  console.log("selectImage called"); 
+  $('#bootstrap-modal').modal('show');
+  $("#bootstrap-modal").on("shown.bs.modal", function() {
+    $('#image-preview-div').css("display", "block");
+    $('#preview-img').attr('src', e.target.result);
+    $('#preview-img').css('width', '450px');
 
      // console.log("modal opened");
 
-    }).on("hidden.bs.modal", function() {
-      originalData = $("#preview-img").cropper("getCroppedCanvas");
-      var originalPng = originalData.toDataURL("image/png");
+   }).on("hidden.bs.modal", function() {
+    originalData = $("#preview-img").cropper("getCroppedCanvas");
+    var originalPng = originalData.toDataURL("image/png");
       //console.log(originalData);
       $("#preview-img").cropper("destroy");
       $('#cropp-image-div').css("display", "block");
       $('#crop-image').attr('src', originalPng);
       $('#crop-image').css('max-width', '200px');
     });
-  }
-  $(document).ready(function (e) {
-    $('form#upload-image-form').on('submit', function(e) {
-      e.preventDefault();
-      $('#message').empty();
-      $('#loading').show();
+ }
+ $(document).ready(function (e) {
+  $('form#upload-image-form').on('submit', function(e) {
+    e.preventDefault();
+    $('#message').empty();
+    $('#loading').show();
       //console.log(originalData);
       var formdata = new FormData(this); 
       
@@ -342,11 +342,11 @@
 
 
    });
-    $('#image').change(function() {
-      $('#upload-button').removeAttr("disabled");
-      var reader = new FileReader();
-      reader.onload = selectImage;
-      reader.readAsDataURL(this.files[0]);
-    });
+  $('#image').change(function() {
+    $('#upload-button').removeAttr("disabled");
+    var reader = new FileReader();
+    reader.onload = selectImage;
+    reader.readAsDataURL(this.files[0]);
   });
+});
 </script>

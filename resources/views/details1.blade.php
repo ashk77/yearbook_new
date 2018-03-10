@@ -128,9 +128,9 @@
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
               </li>
-              <!--<li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="#">Change Password </a>
-              </li>-->
+              <li class="head text-dark bg-light">
+                <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+              </li>
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>
@@ -202,17 +202,26 @@
               
               <form class="form" method="post" action="/yearbook/details">
                 {{csrf_field()}}
-                @if (count($errors) > 0)
-
-                <script type="text/javascript">
-
-                  alert('<?php foreach($errors->all() as $error) { echo "$error"; } ?>');
-
-                </script>
-
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                  <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                  </ul>
+                </div>
                 @endif
+
+                @if(session('message'))
+                <div class="alert alert-success">
+                  {{session('message')}}
+                </div>
+                @endif 
+                
                 <div class="row" style="text-align: center;">
                   <div class="col">
+                    <i class="material-icons prefix">work</i>&nbsp;
+                    
                     <label for="department">Department</label>
                     <select name="department"  id="department" required class="form-control">
                       <option selected value="{{Auth::user()->department}}">@php
@@ -265,6 +274,7 @@
                     </select>
                   </div>
                   <div class="col">
+                    <i class="material-icons prefix">hotel</i>&nbsp;
                     <label for="HOR">Hall of Residence</label>
                     <select name="HOR"  id="HOR" required class="form-control">
                       <option selected value="{{Auth::user()->HOR}}">@php
@@ -304,6 +314,7 @@
                     </select>
                   </div>
                   <div class="col">
+                    <i class="material-icons prefix">library_books</i>&nbsp;
                     <label for="course">Course</label>
                     <select name="course"  required class="form-control">
                       <option selected value="{{Auth::user()->course}}">@php 
@@ -340,6 +351,22 @@
                 </div>
                 <br>
                 <div class="row">
+                  <div class="col">
+                    <i class="material-icons prefix">location_city</i>&nbsp;
+                    <label for="city">City</label>
+                    <input name="city" value="{{Auth::user()->city}}"  class="form-control" type="text" required >
+
+                  </div>
+                  <div class="col">
+                    <i class="material-icons prefix">location_on</i>&nbsp;
+                    <label for="country">Country</label>
+                    <input name="country" value="{{Auth::user()->country}}" class="form-control"  type="text"  required> 
+                  </div>
+
+                </div>
+
+                <br>
+                <div class="row">
 
                   <div class="col">
                     <button class="btn btn-success" type="submit" class="form-control"> Update </button>
@@ -356,7 +383,7 @@
       </div>
     </section>
 
-   <footer class="footer text-faded text-center py-5">
+    <footer class="footer text-faded text-center py-5">
       <div class="container">
         <p class="m-0 small">Copyright &copy; Yearbook 2018</p>
         <p class="m-0 small"><a target="_blank" href="http://www.sac.iitkgp.ac.in/team.php">Contact Us</a></p>

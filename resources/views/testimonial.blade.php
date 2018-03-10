@@ -368,7 +368,7 @@ body{
 }
 
 .nav-justified .nav-item {
- 
+
   background-color: #a9b1a9;
 }
 </style>
@@ -448,9 +448,9 @@ crossorigin="anonymous"></script>
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
               </li>
-             <!--<li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="#">Change Password </a>
-              </li>-->
+              <li>
+                <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+              </li class="head text-dark bg-light">
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>
@@ -511,12 +511,12 @@ crossorigin="anonymous"></script>
       <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="../img/about.jpg" alt="">
       <div class="about-heading-content">
         <div class="row">
-          
+
           <div class="col-xl-9 col-lg-10 mx-auto">
 
             <div class="bg-faded rounded p-5">
               <div class="row">
-                
+
                <div class="col l6 m6 s6" style="padding: 23px;margin-left: 30%;margin-top: -20%;"><img class="img-thumbnail" width="180px"; height= "180px";  src="<?php if (!empty($data['pro_pic'])){echo '../'.$data['pro_pic']; } else { echo '../ind/shot.jpg';}?>" alt="" class="circle responsive-img" id="OpenImgUpload" style="cursor: pointer;width: 180px;height: 180px;"></div>
 
              </div> 

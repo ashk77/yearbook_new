@@ -171,9 +171,9 @@
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
               </li>
-              <!--<li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="#">Change Password </a>
-              </li>-->
+              <li class="head text-dark bg-light">
+                <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+              </li>
               <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>

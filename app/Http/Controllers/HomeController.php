@@ -94,10 +94,31 @@ class HomeController extends Controller
          $user->course = request('course');
          $user->department = request('department');
          $user->phone = request('phone');
+         $user->country = request('country');
+         $user->city = request('city');
          $user->save();
-         return back();
+         return back()->with('message','Details updated succesfully!');
 
 
+     }
+     public function showpassword()
+     {
+        $user = User::get();
+        $roll = Auth::user()->rollno;
+        $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+
+        return view('password',compact('user','notifications'));
+     }
+     public function editpassword(Request $request)
+     {
+        $user = Auth::user();
+        $request->validate([
+            'password'=>'required|confirmed|min:6',
+            'password_confirmation'=>'required'
+        ]);
+        $user->password = bcrypt(request('password'));
+        $user->save();
+        return back()->with('message','Password changed succesfully!');
      }
  }
 
