@@ -29,17 +29,24 @@ class CountController extends Controller
     public function index()
     {
 
+        $images = Image::get();
+        foreach ($images as $image) {
+            $image['finalcount'] = $image['totalcount'] - 1.5*($image['created_at']->diffForHumans());
+            $image->save();
+        }
 		//to select 50 images and show them in 10 per page
-		$images=Image::orderBy('totalcount','DESC')->latest()->take(50)->paginate(5);
+        $images=Image::orderBy('finalcount','DESC')->take(50)->paginate(5);
 
-		$currentpage=$images->currentPage();
-		$perpage=$images->perPage();
+        //$images = $image->sortBy('totalcount');
+        //dd($images);
+        $currentpage=$images->currentPage();
+        $perpage=$images->perPage();
 
-		$user = User::get();
-		$roll = Auth::user()->rollno;
-		$notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+        $user = User::get();
+        $roll = Auth::user()->rollno;
+        $notifications = views::where('depmate',$roll)->where('read','1')->get();
 
-    	return view('trending1',compact('images','user','notifications','currentpage','perpage'));
+        return view('trending1',compact('images','user','notifications','currentpage','perpage'));
     }
     public function entry()
     {
@@ -51,7 +58,7 @@ class CountController extends Controller
     	}
     	return redirect('/');
     }
-     public function entry1()
+    public function entry1()
     {
     	$users = User::get();
     	
@@ -61,7 +68,7 @@ class CountController extends Controller
     	}
     	return redirect('/');
     }
-     public function entry2()
+    public function entry2()
     {
     	$users = User::get();
     	
@@ -71,7 +78,7 @@ class CountController extends Controller
     	}
     	return redirect('/');
     }
-     public function entry3()
+    public function entry3()
     {
     	$users = User::get();
     	

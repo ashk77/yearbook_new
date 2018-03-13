@@ -38,7 +38,7 @@ class HomeController extends Controller
         {
             $user = User::get();
             $roll = Auth::user()->rollno;
-            $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+            $notifications = views::where('depmate',$roll)->where('read','1')->get();
             return view('home1',compact('user','notifications'));
         }
 
@@ -54,7 +54,7 @@ class HomeController extends Controller
             {
                 $user = User::get();
                 $roll = Auth::user()->rollno;
-                $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+                $notifications = views::where('depmate',$roll)->where('read','1')->get();
 
                 return view('options',compact('notifications','user','options'));
             }
@@ -105,7 +105,7 @@ class HomeController extends Controller
      {
         $user = User::get();
         $roll = Auth::user()->rollno;
-        $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+        $notifications = views::where('depmate',$roll)->where('read','1')->get();
 
         return view('password',compact('user','notifications'));
      }

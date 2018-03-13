@@ -335,6 +335,14 @@
       font-size: 13px;
     }
   }
+   div.b {
+    white-space: nowrap; 
+    
+    width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    
+  }
 </style>
 
 
@@ -489,10 +497,10 @@ crossorigin="anonymous"></script>
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
-                        <div>
+                        <div class="b">
                           {{$notification['views']}}
                         </div>
-                        <small class="text-warning">{{$notification['created_at']}}</small>
+                        <small class="text-warning">{{$notification['created_at']->diffForHumans()}}</small>
                       </div>    
                     </div>
                   </li>
@@ -594,7 +602,7 @@ crossorigin="anonymous"></script>
                         <form action="/yearbook/writetestimony/{{$data['rollno']}}" onSubmit="alert('Your views will be added in his yearbook after his registration and approval');" method="POST" style="padding-top: 0;">
                           {{csrf_field()}}
                           <input id="ratings-hidden" name="rating" type="hidden"> 
-                          <textarea class="form-control animated" cols="50" id="new-review" name="viewf" placeholder="Enter your review here...(max 144 character)" rows="5" maxlength="144" ></textarea>
+                          <textarea class="form-control animated" cols="50" id="new-review" name="viewf" placeholder="Enter your review here...(max 1000 character)" rows="5" maxlength="1000" ></textarea>
                           
                           <div class="text-right">
                             <div class="stars starrr" data-rating="0"></div>

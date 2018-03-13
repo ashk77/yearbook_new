@@ -57,7 +57,7 @@ FileController
 	Route::get('/details',function(){
 		$user = App\User::get();
 		$roll = Auth::user()->rollno;
-		$notifications = App\views::where('depmate',$roll)->where('read','1')->get()->toArray();
+		$notifications = App\views::where('depmate',$roll)->where('read','1')->get();
 
 		return view('details1',compact('user','notifications'));
 	});

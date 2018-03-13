@@ -20,7 +20,7 @@ class profile extends Controller
        $myviews = views::where('depmate',Auth::user()->rollno)->latest()->get();
        $user = User::get();
        $roll = Auth::user()->rollno;
-       $notifications = views::where('depmate',$roll)->where('read','1')->latest()->get()->toArray();
+       $notifications = views::where('depmate',$roll)->where('read','1')->latest()->get();
 
        return view('profile_index',compact('myviews','user','notifications'));
    }
@@ -35,7 +35,7 @@ class profile extends Controller
        $images = Image::where('rollno',$roll)->latest()->get()->toArray();    
        $user = User::get();
        $roll = Auth::user()->rollno;
-       $notifications = views::where('depmate',$roll)->where('read','1')->get()->toArray();
+       $notifications = views::where('depmate',$roll)->where('read','1')->get();
 
 
        return view('testimonial',compact('myviews','mydata','images','user','notifications'));

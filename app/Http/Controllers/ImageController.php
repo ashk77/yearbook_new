@@ -19,7 +19,7 @@ class ImageController extends Controller
 		$images = Image::where('rollno',Auth::user()->rollno)->latest()->get()->toArray();	
 		$user = User::get();
 		$roll = Auth::user()->rollno;
-		$notifications = views::where('depmate',$roll)->where('read','1')->latest()->get()->toArray();
+		$notifications = views::where('depmate',$roll)->where('read','1')->latest()->get();
 
 		return view('upload1',compact('images','user','notifications'));
 	}

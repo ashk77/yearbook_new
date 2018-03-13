@@ -82,6 +82,14 @@
       font-size: 13px;
     }
   }
+   div.b {
+    white-space: nowrap; 
+    
+    width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    
+  }
 </style>
 </head>
 
@@ -169,10 +177,10 @@
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
-                        <div>
+                        <div class="b">
                           {{$notification['views']}}
                         </div>
-                        <small class="text-warning">{{$notification['created_at']}}</small>
+                        <small class="text-warning">{{$notification['created_at']->diffForHumans()}}</small>
                       </div>    
                     </div>
                   </li>
@@ -354,12 +362,14 @@
                   <div class="col">
                     <i class="material-icons prefix">location_city</i>&nbsp;
                     <label for="city">City</label>
+                     <i style="font-size:24px; margin-left:11px; " class="fa" data-toggle="popover" title="Why do I need to provide my location?" data-content="Your location will be used for a new initiative called the Class Map. The Class Map provides a platform for the graduating batch to stay connected with their batchies by knowing location after graduation.">&#xf059;</i>
                     <input name="city" value="{{Auth::user()->city}}"  class="form-control" type="text" required >
 
                   </div>
                   <div class="col">
                     <i class="material-icons prefix">location_on</i>&nbsp;
                     <label for="country">Country</label>
+                    <i style="font-size:24px; margin-left:11px; " class="fa" data-toggle="popover" title="Why do I need to provide my location?" data-content="Your location will be used for a new initiative called the Class Map. The Class Map provides a platform for the graduating batch to stay connected with their batchies by knowing location after graduation.">&#xf059;</i>
                     <input name="country" value="{{Auth::user()->country}}" class="form-control"  type="text"  required> 
                   </div>
 
@@ -408,4 +418,16 @@
         source:[names]
       }); 
     });
+
+    $(document).ready(function(){
+
+    $('[data-toggle="popover"]').popover({
+
+        placement : 'top',
+
+        trigger : 'hover'
+
+    });
+
+});
   </script>

@@ -82,6 +82,14 @@
       font-size: 13px;
     }
   }
+   div.b {
+    white-space: nowrap; 
+    
+    width: 270px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    
+  }
 </style>
 </head>
 
@@ -170,10 +178,10 @@
                       </div> 
                       <div class="col-lg-8 col-sm-8 col-8">
                         <strong class="text-info">{{$notification['user']}}</strong>
-                        <div>
+                        <div class="b">
                           {{$notification['views']}}
                         </div>
-                        <small class="text-warning">{{$notification['created_at']}}</small>
+                        <small class="text-warning">{{$notification['created_at']->diffForHumans()}}</small>
                       </div>    
                     </div>
                   </li>
