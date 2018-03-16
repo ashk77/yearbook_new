@@ -283,7 +283,7 @@
                 </strong>
                 <span class="section-heading-lower">{{$name[0]['name']}}</span>
                
-                <span class="section-heading-upper">"{{$buckets[$image['id']]}}"</span>
+                <span class="section-heading-upper">"{{$buckets[$image['list']]}}"</span>
               
               </h2>
               <strong>{{$image['created_at']->diffForHumans() }}</strong>

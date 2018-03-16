@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
-use App\bucket;
+use App\Bucket;
 use App\views;
 use App\User;
 use App\Image;
@@ -17,7 +17,7 @@ class BucketController extends Controller
     }
     public function index()
     {
-     $myviews = bucket::where('roll',Auth::user()->rollno)->get();
+     $myviews = Bucket::where('roll',Auth::user()->rollno)->get();
      $user = User::get();
      $roll = Auth::user()->rollno;
 
@@ -72,7 +72,7 @@ class BucketController extends Controller
       $user = User::get();
       $roll = Auth::user()->rollno;
       $notifications = views::where('depmate',$roll)->where('read','1')->get();
-      $buckets = ['SF Salsa','Old Archi Building','Graffitis','Howrah Bridges','>Star Gazing','Twilight View','Treat','Bonfire','Little Sisters','Trek','Local Train','2.2'];
+      $buckets = ['','SF Salsa','Old Archi Building','Graffitis','Howrah Bridges','>Star Gazing','Twilight View','Treat','Bonfire','Little Sisters','Trek','Local Train','2.2'];
       return view('bucket_view',compact('images','user','notifications','currentpage','perpage','buckets'));
     }
 
