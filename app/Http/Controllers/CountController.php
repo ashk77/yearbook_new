@@ -30,8 +30,9 @@ class CountController extends Controller
     {
 
         $images = Image::get();
+        $currenttime = \Carbon\Carbon::now();
         foreach ($images as $image) {
-            $image['finalcount'] = $image['totalcount'] - 1.5*($image['created_at']->diffForHumans());
+            $image['finalcount'] = $image['totalcount'] - 1.5*($image['created_at']->diffInDays($currenttime));
             $image->save();
         }
 		//to select 50 images and show them in 10 per page
