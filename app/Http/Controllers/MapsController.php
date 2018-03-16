@@ -9,6 +9,7 @@ class MapsController extends Controller
     public function index()
     {
     	$users = User::get();
-    	return view('maps');
+    	$locations = $locations = User::where('country','>','0')->where('city','>','0')->get();
+    	return view('maps',compact('locations'));
     }
 }

@@ -48,7 +48,8 @@ class CountController extends Controller
 
         return view('trending1',compact('images','user','notifications','currentpage','perpage'));
     }
-    public function entry()
+   
+   /* public function entry()
     {
     	$users = User::get();
     	
@@ -87,6 +88,6 @@ class CountController extends Controller
     		$users[$var]->save();
     	}
     	return redirect('/');
-    }
+    }*/
     
 }

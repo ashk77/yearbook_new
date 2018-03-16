@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMapsTable extends Migration
+class CreateBucketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,14 @@ class CreateMapsTable extends Migration
      */
     public function up()
     {
-        Schema::create('maps', function (Blueprint $table) {
+        Schema::create('buckets', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->text('roll');
+            $table->text('list');
+            $table->text('pic');
+            $table->integer('totalcount')->default('0');
+            $table->integer('finalcount')->default('0');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateMapsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maps');
+        Schema::dropIfExists('buckets');
     }
 }

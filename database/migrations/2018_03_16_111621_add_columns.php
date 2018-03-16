@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnInImage extends Migration
+class AddColumns extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,10 @@ class AddColumnInImage extends Migration
     public function up()
     {
         Schema::table('images', function (Blueprint $table) {
-            $table->text('finalcount')->default('0');
+            $table->integer('finalcount')->default('0');
             
         });
+           
     }
 
     /**
@@ -26,9 +27,6 @@ class AddColumnInImage extends Migration
      */
     public function down()
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->integer('finalcount');
-           
-        });
+        //
     }
 }

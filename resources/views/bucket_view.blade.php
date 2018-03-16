@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>YB|Trending</title>
+  <title>YB|Bucket</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -165,13 +165,13 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item  px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/yearbook/trending">Trending</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
           </li>
-          <li class="nav-item px-lg-3 dropdown"  data-step="9" data-intro="<center> Bucket List ">
+          <li class="nav-item active px-lg-3 dropdown"  data-step="9" data-intro="<center> Bucket List ">
             <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-opencart"></i>
             </a>
@@ -269,7 +269,7 @@
               <h2 class="section-heading mb-0">
                 <!--<span class="section-heading-upper">Blended to Perfection</span>-->
                 @php
-                $name = App\User::where('rollno',$image['rollno'])->get()->toArray();
+                $name = App\User::where('rollno',$image['roll'])->get()->toArray();
                // dd($name[0]['name']);
                 @endphp
 
@@ -282,17 +282,17 @@
                   @endphp
                 </strong>
                 <span class="section-heading-lower">{{$name[0]['name']}}</span>
-                @if(!empty($image['caption']))
-                <span class="section-heading-upper">"{{$image['caption']}}"</span>
-                @endif
+               
+                <span class="section-heading-upper">"{{$buckets[$image['id']]}}"</span>
+              
               </h2>
               <strong>{{$image['created_at']->diffForHumans() }}</strong>
             </div>
           </div>
-          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="../../../{{$image['url']}}" id="{{$image['id']}}"  data-toggle="tooltip" data-placement="top" title="Click the image!" style="cursor: pointer;">
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{$image['pic']}}" id="{{$image['id']}}"  data-toggle="tooltip" data-placement="top" title="Click the image!" style="cursor: pointer;">
        <!-- <div class="product-item-description d-flex mr-auto">
           <div class="bg-faded p-5 rounded">
-            <p class="mb-0">{{$image['caption']}}</p>
+            <p class="mb-0"></p>
           </div>
         </div>-->
       </div>
@@ -352,7 +352,7 @@
     }
 
     $.ajax({
-      url: "/yearbook/likeadd",
+      url: "/yearbook/bucket/likeadd",
       type: "POST",
       data: formData,
 
@@ -379,7 +379,7 @@
         '_token' : $('#comment-token').val()
       }
       $.ajax({
-        url: "/yearbook/commentadd",
+        url: "/yearbook/bucket/commentadd",
         type: "POST",
         data: formData,
 
@@ -396,7 +396,7 @@
 
 
       $.ajax({
-        url: "/yearbook/likes",
+        url: "/yearbook/bucket/likes",
         type: "POST",
         data: formData,
 
@@ -428,7 +428,7 @@
     console.log(formData);
 
     $.ajax({
-      url: "/yearbook/comment",
+      url: "/yearbook/bucket/comment",
       type: "POST",
       data: formData,
 

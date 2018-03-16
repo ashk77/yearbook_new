@@ -29,6 +29,8 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'phone' => $faker->phoneNumber,
 		'view_self' => '',
 		'pro_pic' => '',
-		'rollno' => '16CH'.$faker->numberBetween($min =10000, $max = 30050)
+		'rollno' => '16CH'.$faker->numberBetween($min =10000, $max = 30050),
+		'country' => $faker->country,
+		'city' => $faker->city
 	];
 });

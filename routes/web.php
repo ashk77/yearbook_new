@@ -107,7 +107,17 @@ Route::get('/accept/{token}', 'InviteController@accept')->name('accept');
 Route::get('/trending','CountController@index');
 
 
-//Route::get('/classmap','MapsController@index');
+Route::get('/classmap','MapsController@index');
 Route::get('/changepassword','HomeController@showpassword');
 
 Route::post('/changepassword','HomeController@editpassword');
+
+
+
+Route::get('/bucket', 'BucketController@index');
+Route::post('/bucketpost/{id}','BucketController@comment');
+Route::get('/viewbucket', 'BucketController@view');
+Route::post('/bucket/comment','CommentController@bucket_add');
+Route::post('/bucket/commentadd','CommentController@bucket_new');
+Route::post('/bucket/likes','LikesController@bucket_load');
+Route::post('/bucket/likeadd','LikesController@bucket_like');
