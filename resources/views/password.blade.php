@@ -128,16 +128,16 @@
           <li class="nav-item px-lg-3">
             <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
           </li>
-          <li class="nav-item px-lg-3 dropdown"  data-step="9" data-intro="<center> Bucket List ">
+          <li class="nav-item px-lg-3 dropdown"  data-step="9" data-intro="<center> Itch List ">
             <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-opencart"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" >
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/yearbook/bucket">Fill the bucket</a>
+                <a class="nav-link text-dark" href="/yearbook/bucket">Fill the Itch List</a>
               </li>
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/yearbook/viewbucket">View bucket</a>
+                <a class="nav-link text-dark" href="/yearbook/viewbucket">View Itch List</a>
               </li>
             
 

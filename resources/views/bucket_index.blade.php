@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>YB|Bucket</title>
+  <title>YB|Itch List</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -152,16 +152,16 @@ body{
           <li class="nav-item  px-lg-3">
             <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
           </li>
-          <li class="nav-item active px-lg-3 dropdown"  data-step="9" data-intro="<center> Bucket List ">
+          <li class="nav-item active px-lg-3 dropdown"  data-step="9" data-intro="<center> Itch List ">
             <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-opencart"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" >
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/yearbook/bucket">Fill the bucket</a>
+                <a class="nav-link text-dark" href="/yearbook/bucket">Fill the itch list</a>
               </li>
               <li class="head text-dark bg-light">
-                <a class="nav-link text-dark" href="/yearbook/viewbucket">View bucket</a>
+                <a class="nav-link text-dark" href="/yearbook/viewbucket">View itch list</a>
               </li>
               
 
@@ -243,9 +243,9 @@ body{
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-upper"></span>
-                <span class="section-heading-lower">BUCKET LIST</span>
+                <span class="section-heading-lower">ITCH LIST</span>
               </h2>
-              <p class="mb-0">Here is a list of things which you can do before graduating.Complete the tasks and upload the images and we will make sure they become a part of your yearbook.</p>
+              <p class="mb-0">Here is a list of things which you can do before graduating. Complete the tasks and upload the images and we will make sure they become a part of your yearbook.</p>
               <br>
 
 
@@ -285,7 +285,7 @@ body{
             <form action="/yearbook/bucketpost/1" method="post" enctype="multipart/form-data">
               {{csrf_field()}}
               <input type="file" required="required" name="fileToUpload" >
-              <br>
+              <br><br>
               <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
             </form>
           </div>
@@ -317,7 +317,7 @@ body{
             <form action="/yearbook/bucketpost/2" method="post" enctype="multipart/form-data">
               {{csrf_field()}}
               <input type="file" required="required" name="fileToUpload" >
-              <br>
+              <br><br>
               <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
             </form>
 
@@ -351,7 +351,7 @@ body{
             <form action="/yearbook/bucketpost/3" method="post" enctype="multipart/form-data">
               {{csrf_field()}}
               <input type="file" required="required" name="fileToUpload" >
-              <br>
+              <br><br>
               <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
             </form>
           </div>
@@ -388,7 +388,7 @@ body{
           <form action="/yearbook/bucketpost/4" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <input type="file" required="required" name="fileToUpload" >
-            <br>
+            <br><br>
             <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
           </form>
         </div>
@@ -420,7 +420,7 @@ body{
           <form action="/yearbook/bucketpost/5" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <input type="file" required="required" name="fileToUpload" >
-            <br>
+            <br><br>
             <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
           </form>
         </div>
@@ -452,7 +452,7 @@ body{
           <form action="/yearbook/bucketpost/6" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <input type="file" required="required" name="fileToUpload" >
-            <br>
+            <br><br>
             <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
           </form>
         </div>
@@ -489,7 +489,7 @@ body{
         <form action="/yearbook/bucketpost/7" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
           <input type="file" required="required" name="fileToUpload" >
-          <br>
+          <br><br>
           <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
         </form>
       </div>
@@ -521,7 +521,7 @@ body{
         <form action="/yearbook/bucketpost/8" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
           <input type="file" required="required" name="fileToUpload" >
-          <br>
+          <br><br>
           <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
         </form>
       </div>
@@ -553,7 +553,7 @@ body{
         <form action="/yearbook/bucketpost/9" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
           <input type="file" required="required" name="fileToUpload" >
-          <br>
+          <br><br><br>
           <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
         </form>
       </div>
@@ -590,7 +590,7 @@ body{
       <form action="/yearbook/bucketpost/10" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="file" required="required" name="fileToUpload" >
-        <br>
+        <br><br>
         <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
       </form>
     </div>
@@ -622,7 +622,7 @@ body{
       <form action="/yearbook/bucketpost/11" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="file" required="required" name="fileToUpload" >
-        <br>
+        <br><br>
         <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
       </form>
     </div>
@@ -653,7 +653,7 @@ body{
       <form action="/yearbook/bucketpost/12" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="file" required="required" name="fileToUpload" >
-        <br>
+        <br><br>
         <input type="submit" value="Upload Image" name="submit" class="btn btn-success" align="right">
       </form>
     </div>
