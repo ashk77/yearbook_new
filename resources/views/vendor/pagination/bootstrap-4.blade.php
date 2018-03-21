@@ -3,12 +3,22 @@
         {{-- Previous Page Link --}}
         @php
            $a = $paginator->previousPageUrl() ;
-            strpos($a, '/trending');
-            $previousPageUrl = substr($a, 0,strpos($a, '/trending')).'yearbook'.substr($a, strpos($a, '/trending'));
+
+            if(strpos($a, '/trending')){
+                $insert = '/trending';
+
+            }
+            else
+            {
+                // dd(strpos($a, '/trending'));
+                $insert = '/viewbucket';
+            }
+
+            $previousPageUrl = substr($a, 0,strpos($a, $insert)).'yearbook'.substr($a, strpos($a, $insert));
            // $paginator->previousPageUrl() = $b;
             $a = $paginator->nextPageUrl() ;
-            strpos($a, '/trending');
-            $nextPageUrl = substr($a, 0,strpos($a, '/trending')).'yearbook'.substr($a, strpos($a, '/trending'));
+            strpos($a, $insert);
+            $nextPageUrl = substr($a, 0,strpos($a, $insert)).'yearbook'.substr($a, strpos($a, $insert));
           //  $paginator->nextPageUrl() = $b;
           /*  $a = $url ;
             strpos($a, '/trending');
@@ -36,8 +46,8 @@
                     @else
                     @php
                         $a = $url ;
-                        strpos($a, '/trending');
-                        $b = substr($a, 0,strpos($a, '/trending')).'yearbook'.substr($a, strpos($a, '/trending'));
+                        strpos($a, $insert);
+                        $b = substr($a, 0,strpos($a, $insert)).'yearbook'.substr($a, strpos($a, $insert));
                         $url = $b;
                     @endphp
                         <li class="page-item"><a class="page-link" id="ads" href="{{ $url }}">{{ $page }}</a></li>
