@@ -108,6 +108,10 @@ Route::get('/trending','CountController@index');
 
 
 Route::get('/classmap','MapsController@index');
+Route::get('/edit_location','MapsController@edit_location');
+Route::post('/edit_location','MapsController@save_location');
+
+
 Route::get('/changepassword','HomeController@showpassword');
 
 Route::post('/changepassword','HomeController@editpassword');

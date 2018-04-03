@@ -34,3 +34,17 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'city' => $faker->city
 	];
 });
+
+$factory->define(App\Maps::class, function (Faker $faker) {
+	static $password;
+
+	return [
+		'name' => $faker->name,
+		'latitude' =>$faker->latitude($min = -90, $max = 90),
+		'longitude' =>$faker->longitude($min = -180, $max = 180),
+		'rollno' => '16CH'.$faker->numberBetween($min =10000, $max = 30050),
+		'address' => $faker->address,
+		
+	];
+});
+
