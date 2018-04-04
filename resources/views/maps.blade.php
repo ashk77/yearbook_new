@@ -223,11 +223,32 @@
     
 
 
-
+    <br>
     <div id="map"></div>
+    <!--
+    <section class="page-section cta" style="background-color: rgba(67,100,107,0.55);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper"></span>
+                <span class="section-heading-lower">IIT KGP Class Map : <br> Batch of 2018</span>
+              </h2>
+              <p class="mb-0"> The yearbook is an opus of memories that you would carry along graduating from the institute. The wonderful years spent in the campus are engraved and expressed via photographs and writeups in this departing souvenir from IIT KGP. 
+
+              With an assortment of your thoughts and snaps from various experiences through the years, the book truly collaborates your time in KGP and is a walk down your memory lane every time you look through it.</p>
+              <br>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
     
-    
-    
+    -->
+    <br>
     
 
     <footer class="footer text-faded text-center py-5">
@@ -292,7 +313,7 @@
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 3,
+         zoom: 2,
          center: {lat: 20.5937, lng: 78.9629}
        });
         var infoWin = new google.maps.InfoWindow();
@@ -329,9 +350,10 @@ var locations_a = <?php echo $locations;?>;
      var t = 0;
      for (var i = 0; i < locations_a.length; i++) {
         //console.log("_a",locations_a[i].latitude);
-       
+
         var flag = 0;
         if(locations_a[i].latitude!='' && locations_a[i].longitude!='' && locations_a[i].longitude!=null && locations_a[i].longitude!=null){
+          console.log(locations.length);
           for (var j = 0; j < locations.length; j++) {
             if(locations[j].lat==locations_a[i].latitude && locations[j].lng==locations_a[i].longitude){
               flag = 1; 
@@ -340,34 +362,37 @@ var locations_a = <?php echo $locations;?>;
           }
           if(flag==0)
           {
-             locations[t] = {};
-            locations[t].lat = Number(locations_a[i].latitude);
-            locations[t].lng = Number(locations_a[i].longitude);
-            locations[t].info = locations_a[i].name+" | "+locations_a[i].rollno;
-          }
-          else
-          {
+           locations[t] = {};
+           locations[t].lat = Number(locations_a[i].latitude);
+           locations[t].lng = Number(locations_a[i].longitude);
+           locations[t].info = locations_a[i].name+" | "+locations_a[i].rollno;
+           t++;
+         }
+         else
+         {
 
-            locations[j].info +="<br>"+locations_a[i].name+" | "+locations_a[i].rollno;
-          }
-          t++;
+          locations[j].info +="<br>"+locations_a[i].name+" | "+locations_a[i].rollno;
         }
-
+       
       }
-      for (var i = 0; i < locations.length; i++) {
-        if(locations[i]==null)
-          locations.splice(i,1);
 
-      }
+    }
+    for (var i = 0; i < locations.length; i++) {
+      if(locations[i]==null)
+        locations.splice(i,1);
+
+    }
       //console.log(".",locations);
      // google.maps.event.addDomListener(window, "load", initMap);
-    </script>
+   </script>
 
-    <style>
+   <style>
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
       #map {
-        height: 100%;
+        height: 90%;
+        width: 80%;
+        margin-left: 10%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {

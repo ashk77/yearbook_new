@@ -350,11 +350,13 @@
                 <span class="section-heading-lower">Previous Yearbook</span>
               </h2>
               <div class="row">
-                <div class="col-lg-4 col-sm-4"><img src="ind/year16.jpg" width="100%" alt=""/></div>
+                  <div class="col-lg-3 col-sm-3"><img src="year2017.jpg" width="100%" height="94%" alt=""/></div>
+                  
+                <div class="col-lg-3 col-sm-3"><img src="ind/year16.jpg" width="100%" alt=""/></div>
 
-                <div class="col-lg-4 col-sm-4"> <img src="ind/year2015.jpg" width="100%"  alt=""/></div>
+                <div class="col-lg-3 col-sm-3"> <img src="ind/year2015.jpg" width="100%"  alt=""/></div>
 
-                <div class="col-lg-4 col-sm-4"> <img src="ind/year2014.jpg" width="100%"  alt=""/></div>
+                <div class="col-lg-3 col-sm-3"> <img src="ind/year2014.jpg" width="100%"  alt=""/></div>
               </div>
             </div>
           </div>
