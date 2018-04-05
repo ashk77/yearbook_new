@@ -4,9 +4,9 @@
         @php
            $a = $paginator->previousPageUrl() ;
            
-                // dd(strpos($a, '/trending'));
-                $insert = '/viewbucket';
-           
+            
+                $insert = '/trending';
+            
 
             $previousPageUrl = substr($paginator->previousPageUrl(), 0,strpos($paginator->previousPageUrl(), $insert)).'yearbook'.substr($paginator->previousPageUrl(), strpos($paginator->previousPageUrl(), $insert));
            // $paginator->previousPageUrl() = $b;

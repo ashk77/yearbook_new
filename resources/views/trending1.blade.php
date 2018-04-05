@@ -258,7 +258,7 @@
     
     @if(count($images)>0)
     <br>
-    {{ $images->links('vendor.pagination.bootstrap-4')}}
+    {{ $images->links('vendor.pagination.bootstrap-4-1')}}
     @php
     $count= 0;
     @endphp
