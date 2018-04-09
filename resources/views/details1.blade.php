@@ -159,6 +159,9 @@
                 <a class="nav-link text-dark" href="/yearbook/classmap">Class Map<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
               </li>
               <li class="head text-dark bg-light">
+                <a class="nav-link text-dark" href="/yearbook/polls">Polls<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
+              </li>
+              <li class="head text-dark bg-light">
                 <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
               </li>
 

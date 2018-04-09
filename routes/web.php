@@ -125,3 +125,7 @@ Route::post('/bucket/comment','CommentController@bucket_add');
 Route::post('/bucket/commentadd','CommentController@bucket_new');
 Route::post('/bucket/likes','LikesController@bucket_load');
 Route::post('/bucket/likeadd','LikesController@bucket_like');
+
+
+Route::get('/polls','PollController@index');
+Route::post('/polls/{id}','PollController@submit');
