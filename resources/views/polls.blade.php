@@ -282,7 +282,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">1. Arnold Schwarzenegger of the batch</label>
-											<input type="text" name="polls1" required="required" id="polls1" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls1" required="required" id="polls1" class="form-control" placeholder="Search your friend here" value="{{$polls['q1']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -297,7 +297,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">2. Friendzoned of the batch</label>
-											<input type="text" name="polls2" required="required" id="polls2" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls2" required="required" id="polls2" class="form-control" placeholder="Search your friend here" value="{{$polls['q2']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -312,7 +312,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">3. Tom Cruise of the Batch</label>
-											<input type="text" name="polls3" required="required" id="polls3" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls3" required="required" id="polls3" class="form-control" placeholder="Search your friend here" value="{{$polls['q2']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -327,7 +327,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">4. Maggu of the Batch</label>
-											<input type="text" name="polls4" required="required" id="polls4" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls4" required="required" id="polls4" class="form-control" placeholder="Search your friend here" value="{{$polls['q4']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -343,7 +343,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">5. Charlie Chaplin of the batch 
 											</label>
-											<input type="text" name="polls5" required="required" id="polls5" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls5" required="required" id="polls5" class="form-control" placeholder="Search your friend here" value="{{$polls['q5']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -359,7 +359,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">6. Zero attendance wala of the batch
 											</label>
-											<input type="text" name="polls6" required="required" id="polls6" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls6" required="required" id="polls6" class="form-control" placeholder="Search your friend here" value="{{$polls['q6']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -374,7 +374,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">7. Bandi Stud </label>
-											<input type="text" name="polls7" required="required" id="polls7" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls7" required="required" id="polls7" class="form-control" placeholder="Search your friend here" value="{{$polls['q7']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -389,7 +389,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">8. Tempo Of The Batch</label>
-											<input type="text" name="polls8" required="required" id="polls8" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls8" required="required" id="polls8" class="form-control" placeholder="Search your friend here" value="{{$polls['q8']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -405,7 +405,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">9. Mr. Spring Fest
 											</label>
-											<input type="text" name="polls9" required="required" id="polls9" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls9" required="required" id="polls9" class="form-control" placeholder="Search your friend here" value="{{$polls['q9']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -421,7 +421,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">10. Ms. Spring Fest
 											</label>
-											<input type="text" name="polls10" required="required" id="polls10" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls10" required="required" id="polls10" class="form-control" placeholder="Search your friend here" value="{{$polls['q10']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -437,7 +437,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">11. Voice Of the Batch
 											</label>
-											<input type="text" name="polls11" required="required" id="polls11" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls11" required="required" id="polls11" class="form-control" placeholder="Search your friend here" value="{{$polls['q11']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -453,7 +453,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">12. Khadoos of the batch
 											</label>
-											<input type="text" name="polls12" required="required" id="polls12" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls12" required="required" id="polls12" class="form-control" placeholder="Search your friend here" value="{{$polls['q12']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -469,7 +469,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">13. Tharki of the batch
 											</label>
-											<input type="text" name="polls13" required="required" id="polls13" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls13" required="required" id="polls13" class="form-control" placeholder="Search your friend here" value="{{$polls['q13']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -485,7 +485,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">14. Neta of the Batch 
 											</label>
-											<input type="text" name="polls14" required="required" id="polls14" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls14" required="required" id="polls14" class="form-control" placeholder="Search your friend here" value="{{$polls['q14']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -501,7 +501,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">15. Prodigy of the batch
 											</label>
-											<input type="text" name="polls15" required="required" id="polls15" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls15" required="required" id="polls15" class="form-control" placeholder="Search your friend here" value="{{$polls['q15']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -517,7 +517,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">16. Tindernath of the Batch
 											</label>
-											<input type="text" name="polls16" required="required" id="polls16" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls16" required="required" id="polls16" class="form-control" placeholder="Search your friend here" value="{{$polls['q16']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -533,7 +533,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">17. Michael Jackson of the Batch
 											</label>
-											<input type="text" name="polls17" required="required" id="polls17" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls17" required="required" id="polls17" class="form-control" placeholder="Search your friend here" value="{{$polls['q17']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -550,7 +550,7 @@ body{
 											<label class="control-label col-sm-2" for="polls">18. 
 												Wikipedia of the batch
 											</label>
-											<input type="text" name="polls18" required="required" id="polls18" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls18" required="required" id="polls18" class="form-control" placeholder="Search your friend here" value="{{$polls['q18']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -566,7 +566,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">19. Marilyn Monroe of the Batch 
 											</label>
-											<input type="text" name="polls19" required="required" id="polls19" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls19" required="required" id="polls19" class="form-control" placeholder="Search your friend here" value="{{$polls['q19']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -582,7 +582,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">20. Chandler of the batch
 											</label>
-											<input type="text" name="polls20" required="required" id="polls20" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls20" required="required" id="polls20" class="form-control" placeholder="Search your friend here" value="{{$polls['q20']}}">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -721,7 +721,7 @@ body{
 										{{ csrf_field() }}
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">8. Tempo Of The Batch</label>
-											<input type="text" name="polls8" required="required" id="polls8" class="form-control" placeholder="Search your friend here" >
+											<input type="text" name="polls8" required="required" id="polls8" class="form-control" placeholder="Search your friend here">
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -753,7 +753,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">10. Ms. Spring Fest
 											</label>
-											<input type="text" name="polls10" required="required" id="polls10" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls10" required="required" id="polls10" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -769,7 +769,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">11. Voice Of the Batch
 											</label>
-											<input type="text" name="polls11" required="required" id="polls11" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls11" required="required" id="polls11" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -785,7 +785,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">12. Khadoos of the batch
 											</label>
-											<input type="text" name="polls12" required="required" id="polls12" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls12" required="required" id="polls12" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -801,7 +801,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">13. Tharki of the batch
 											</label>
-											<input type="text" name="polls13" required="required" id="polls13" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls13" required="required" id="polls13" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -817,7 +817,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">14. Neta of the Batch 
 											</label>
-											<input type="text" name="polls14" required="required" id="polls14" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls14" required="required" id="polls14" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -833,7 +833,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">15. Prodigy of the batch
 											</label>
-											<input type="text" name="polls15" required="required" id="polls15" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls15" required="required" id="polls15" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -849,7 +849,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">16. Tindernath of the Batch
 											</label>
-											<input type="text" name="polls16" required="required" id="polls16" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls16" required="required" id="polls16" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -865,7 +865,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">17. Michael Jackson of the Batch
 											</label>
-											<input type="text" name="polls17" required="required" id="polls17" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls17" required="required" id="polls17" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -882,7 +882,7 @@ body{
 											<label class="control-label col-sm-2" for="polls">18. 
 												Wikipedia of the batch
 											</label>
-											<input type="text" name="polls18" required="required" id="polls18" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls18" required="required" id="polls18" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -898,7 +898,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">19. Marilyn Monroe of the Batch 
 											</label>
-											<input type="text" name="polls19" required="required" id="polls19" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls19" required="required" id="polls19" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -914,7 +914,7 @@ body{
 										<div class="form-group" >
 											<label class="control-label col-sm-2" for="polls">20. Chandler of the batch
 											</label>
-											<input type="text" name="polls20" required="required" id="polls20" class="form-control" placeholder="Search your friend here" ">
+											<input type="text" name="polls20" required="required" id="polls20" class="form-control" placeholder="Search your friend here" >
 										</div>
 										<div class="form-group" style="margin-left: 8px;">
 											<button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
