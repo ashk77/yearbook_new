@@ -254,7 +254,7 @@ body{
 							<p class="mb-0">Who is the Maggu of your batch?<br>
 
 								Who is the Singer of your batch? <br>
-							Vote for them and you'll be felicitated on Alvida!</p>
+							Vote for them and they'll be felicitated on Alvida!</p>
 							<br>
 
 							<!-- that’s all folks! -->
