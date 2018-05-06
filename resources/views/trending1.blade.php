@@ -308,7 +308,7 @@
   @endif
   @endforeach
 
-  {{ $images->links('vendor.pagination.bootstrap-4')}}
+  {{ $images->links('vendor.pagination.bootstrap-4-1')}}
   
   @else
 
