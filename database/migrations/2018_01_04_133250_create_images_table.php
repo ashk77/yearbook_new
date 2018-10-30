@@ -20,6 +20,7 @@ class CreateImagesTable extends Migration
             $table->text('url');
             $table->text('rollno');
             $table->integer('totalcount')->default('0');
+            $table->integer('finalcount')->default('0');
             $table->timestamps();
         });
     }

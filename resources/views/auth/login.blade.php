@@ -46,7 +46,7 @@
     <br>
     Welcome to<b> Yearbook'18</b> Portal </h3>
 
-    <form method="post" action="/yearbook/login" class="form main-title center">
+    <form method="post" action="{{ url('login') }}" class="form main-title center">
 
       {{ csrf_field() }}
       @if ($errors->any())
