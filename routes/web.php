@@ -27,13 +27,12 @@ Auth::routes()
 
 	Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout'); //Just added to fix issue
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile_index', 'profile@index');
 Route::get('/profile_index/{roll}', 'profile@testimonials');
 Route::post('/search','HomeController@search');
 Route::get('/comment/{id}','ImageController@comment');
-
+Route::get('/register',function(){return view('auth.register');});
 
 
 /*

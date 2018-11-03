@@ -107,7 +107,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item px-lg-6">
-                        <form action="/yearbook/search/" method="POST" class="form-inline">
+                        <form action="/search/" method="POST" class="form-inline">
                             {{ csrf_field() }}
                             <div class="form-group" >
                                 <input type="text" name="search" required="required" id="search" class="form-control" placeholder="Search your friend here">
@@ -118,15 +118,15 @@
                         </form>
                     </li>
                     <li class="nav-item px-lg-3">
-                        <a class="nav-link text-uppercase text-expanded" href="/yearbook/home">Home
+                        <a class="nav-link text-uppercase text-expanded" href="/home">Home
                         <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item px-lg-3">
-                        <a class="nav-link text-uppercase text-expanded" href="/yearbook/trending">Trending</a>
+                        <a class="nav-link text-uppercase text-expanded" href="/trending">Trending</a>
                     </li>
                     <li class="nav-item  px-lg-3">
-                        <a class="nav-link text-uppercase text-expanded" href="/yearbook/profile_index">{{Auth::user()->name}}</a>
+                        <a class="nav-link text-uppercase text-expanded" href="/profile_index">{{Auth::user()->name}}</a>
                     </li>
                     <li class="nav-item active px-lg-3 dropdown"  data-step="9" data-intro=" Itch List ">
                         <a class="nav-link text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -134,10 +134,10 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" >
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/bucket">Fill the itch list</a>
+                                <a class="nav-link text-dark" href="/bucket">Fill the itch list</a>
                             </li>
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/viewbucket">View itch list</a>
+                                <a class="nav-link text-dark" href="/viewbucket">View itch list</a>
                             </li>
                         </ul>
                     </li>
@@ -147,19 +147,19 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" >
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/details">Edit Details</a>
+                                <a class="nav-link text-dark" href="/details">Edit Details</a>
                             </li>
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/changepassword">Change Password </a>
+                                <a class="nav-link text-dark" href="/changepassword">Change Password </a>
                             </li>
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/classmap">Class Map<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
+                                <a class="nav-link text-dark" href="/classmap">Class Map<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
                             </li>
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/polls">Polls<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
+                                <a class="nav-link text-dark" href="/polls">Polls<span class="badge badge-danger" style="bottom: 8px;position: relative;right: -7px;">new</span></a>
                             </li>
                             <li class="head text-dark bg-light">
-                                <a class="nav-link text-dark" href="/yearbook/logout">Logout </a>
+                                <a class="nav-link text-dark" href="/logout">Logout </a>
                             </li>
                         </ul>
                     </li>
@@ -181,7 +181,7 @@
                                     </div>
                             </li>
                             @foreach($notifications as $notification)
-                            <a href="/yearbook/read/{{$notification['id']}}">
+                            <a href="/read/{{$notification['id']}}">
                             <li class="notification-box">
                             <div class="row">
                             @php
@@ -239,10 +239,10 @@
                             </h2>
                             <ul>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/1" method="POST" class="form-horizontal">
+                                    <form action="/polls/1" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
-                                            <label class="control-label col-sm-2" for="polls">1. Arnold Schwarzenegger of the batch</label>
+                                            <label class="control-label col-sm-2" for="polls">1. Arnold Schwarzenegger of the batch</label>              
                                             <input type="text" name="polls1" required="required" id="polls1" class="form-control" placeholder="Search your friend here" value="{{$polls['q1']}}">
                                         </div>
                                         <div class="form-group" style="margin-left: 8px;">
@@ -252,7 +252,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/2" method="POST" class="form-horizontal">
+                                    <form action="/polls/2" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">2. Friendzoned of the batch</label>
@@ -265,11 +265,11 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/3" method="POST" class="form-horizontal">
+                                    <form action="/polls/3" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">3. Tom Cruise of the Batch</label>
-                                            <input type="text" name="polls3" required="required" id="polls3" class="form-control" placeholder="Search your friend here" value="{{$polls['q2']}}">
+                                            <input type="text" name="polls3" required="required" id="polls3" class="form-control" placeholder="Search your friend here" value="{{$polls['q3']}}">
                                         </div>
                                         <div class="form-group" style="margin-left: 8px;">
                                             <button type="submit" class="btn btn-default" style="margin-top: 0px;">Submit</button>
@@ -278,7 +278,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/4" method="POST" class="form-horizontal">
+                                    <form action="/polls/4" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">4. Maggu of the Batch</label>
@@ -291,7 +291,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/5" method="POST" class="form-horizontal">
+                                    <form action="/polls/5" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">5. Charlie Chaplin of the batch 
@@ -305,7 +305,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/6" method="POST" class="form-horizontal">
+                                    <form action="/polls/6" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">6. Zero attendance wala of the batch
@@ -319,7 +319,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/7" method="POST" class="form-horizontal">
+                                    <form action="/polls/7" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">7. Bandi Stud </label>
@@ -332,7 +332,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/8" method="POST" class="form-horizontal">
+                                    <form action="/polls/8" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">8. Tempo Of The Batch</label>
@@ -345,7 +345,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/9" method="POST" class="form-horizontal">
+                                    <form action="/polls/9" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">9. Mr. Spring Fest
@@ -359,7 +359,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/10" method="POST" class="form-horizontal">
+                                    <form action="/polls/10" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">10. Ms. Spring Fest
@@ -373,7 +373,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/11" method="POST" class="form-horizontal">
+                                    <form action="/polls/11" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">11. Voice Of the Batch
@@ -387,7 +387,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/12" method="POST" class="form-horizontal">
+                                    <form action="/polls/12" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">12. Khadoos of the batch
@@ -401,7 +401,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/13" method="POST" class="form-horizontal">
+                                    <form action="/polls/13" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">13. Tharki of the batch
@@ -415,7 +415,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/14" method="POST" class="form-horizontal">
+                                    <form action="/polls/14" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">14. Neta of the Batch 
@@ -429,7 +429,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/15" method="POST" class="form-horizontal">
+                                    <form action="/polls/15" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">15. Prodigy of the batch
@@ -443,7 +443,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/16" method="POST" class="form-horizontal">
+                                    <form action="/polls/16" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">16. Tindernath of the Batch
@@ -457,7 +457,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/17" method="POST" class="form-horizontal">
+                                    <form action="/polls/17" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">17. Michael Jackson of the Batch
@@ -471,7 +471,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/18" method="POST" class="form-horizontal">
+                                    <form action="/polls/18" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">18. 
@@ -486,7 +486,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/19" method="POST" class="form-horizontal">
+                                    <form action="/polls/19" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">19. Marilyn Monroe of the Batch 
@@ -500,7 +500,7 @@
                                 </li>
                                 <hr>
                                 <li style="list-style: none;">
-                                    <form action="/yearbook/polls/20" method="POST" class="form-horizontal">
+                                    <form action="/polls/20" method="POST" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <div class="form-group" >
                                             <label class="control-label col-sm-2" for="polls">20. Chandler of the batch
